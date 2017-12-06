@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://maweizhuo.coding.me">
+  <link rel="dns-prefetch" href="http://maweizhuo.com">
   <title>php7 性能测试环境搭建 | maweizhuo blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言   之前并没关注过php的性能。偶然看到博客上一些PHP 进阶,就搭建环境研究下。   php5.3及之前都是用的xhprof ,这是一款Facebook研发的工具，不过很久不更新，不维护了。就不研究该工具了。   php7 的话采用的是  tideways + xhgui   参考文章 搭建php7的性能测试环境的方法 系统环境   我的Linux 环境是 tideways + xhgui">
 <meta name="keywords" content="php,性能测试,tideways,xhgui">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php7 性能测试环境搭建">
-<meta property="og:url" content="http://maweizhuo.coding.me/2017/11/01/php7-性能测试环境搭建/index.html">
+<meta property="og:url" content="http://maweizhuo.com/2017/11/01/php7-性能测试环境搭建/index.html">
 <meta property="og:site_name" content="maweizhuo blog">
 <meta property="og:description" content="前言   之前并没关注过php的性能。偶然看到博客上一些PHP 进阶,就搭建环境研究下。   php5.3及之前都是用的xhprof ,这是一款Facebook研发的工具，不过很久不更新，不维护了。就不研究该工具了。   php7 的话采用的是  tideways + xhgui   参考文章 搭建php7的性能测试环境的方法 系统环境   我的Linux 环境是 tideways + xhgui">
 <meta property="og:updated_time" content="2017-11-01T09:42:21.000Z">
@@ -23,7 +23,7 @@
     <link rel="alternative" href="/atom.xml" title="maweizhuo blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/blog/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/blog/./main.507b3a.css">
   <style type="text/css">
@@ -57,7 +57,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/images/avater.jpg" class="js-avatar">
+			<img src="/blog/images/avater.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">weizhuo.ma</a></h1>
@@ -113,7 +113,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/images/avater.jpg" class="js-avatar">
+				<img src="/blog/images/avater.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">weizhuo.ma</h1>
@@ -236,13 +236,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="/images/alipay.jpg">
+                      <img class="reward-img" src="/blog/images/alipay.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="/images/wx.jpg">
+                      <img class="reward-img" src="/blog/images/wx.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -342,7 +342,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://maweizhuo.coding.me/2017/11/01/php7-性能测试环境搭建/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://maweizhuo.com/2017/11/01/php7-性能测试环境搭建/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -513,6 +513,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -521,7 +525,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">migrate</a>
+                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,7 +541,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
+                <a href="javascript:void(0)" class="js-tag color3">migrate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,11 +549,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,7 +565,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
