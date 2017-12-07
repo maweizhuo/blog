@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://maweizhuo.com">
-  <title>hexo支持emoji表情 | maweizhuo blog</title>
+  <title>hexo支持emoji表情 | maweizhuo blog 马伟倬 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="背景sometimes 写wiki或blog的时候,发现页面都是文字,觉得少点什么,想着能不能加上点表情 （￣︶￣）↗ ,看着就更有趣了。[]~(￣▽￣)~* 使用markdown-it渲染markdown-it">
 <meta name="keywords" content="hexo,emoji">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo支持emoji表情">
 <meta property="og:url" content="http://maweizhuo.com/2017/11/28/hexo支持emoji表情/index.html">
-<meta property="og:site_name" content="maweizhuo blog">
+<meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="背景sometimes 写wiki或blog的时候,发现页面都是文字,觉得少点什么,想着能不能加上点表情 （￣︶￣）↗ ,看着就更有趣了。[]~(￣▽￣)~* 使用markdown-it渲染markdown-it">
-<meta property="og:image" content="http://maweizhuo.com/images/emoji.png">
-<meta property="og:updated_time" content="2017-11-29T01:42:44.000Z">
+<meta property="og:image" content="http://maweizhuo.com/blog/images/emoji.png">
+<meta property="og:updated_time" content="2017-12-07T02:04:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo支持emoji表情">
 <meta name="twitter:description" content="背景sometimes 写wiki或blog的时候,发现页面都是文字,觉得少点什么,想着能不能加上点表情 （￣︶￣）↗ ,看着就更有趣了。[]~(￣▽￣)~* 使用markdown-it渲染markdown-it">
-<meta name="twitter:image" content="http://maweizhuo.com/images/emoji.png">
+<meta name="twitter:image" content="http://maweizhuo.com/blog/images/emoji.png">
   
-    <link rel="alternative" href="/atom.xml" title="maweizhuo blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="maweizhuo blog 马伟倬 博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/blog/favicon.ico">
@@ -204,7 +204,7 @@ var _hmt = _hmt || [];
 <p>进入到markdown-it的node-modules目录下安装该插件<br><code>..hexo\node_modules\hexo-renderer-markdown-it\</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install markdown-it-emoji --save</div></pre></td></tr></table></figure></p>
 <h2 id="配置-config-yml文件"><a href="#配置-config-yml文件" class="headerlink" title="配置_config.yml文件"></a>配置_config.yml文件</h2><p>在hexo的配置文件下添加markdown-it配置代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">markdown:</div><div class="line">  render:</div><div class="line">    html: true</div><div class="line">    xhtmlOut: false</div><div class="line">    breaks: true</div><div class="line">    linkify: true</div><div class="line">    typographer: true</div><div class="line">    quotes: &apos;“”‘’&apos;</div><div class="line">  plugins:</div><div class="line">    - markdown-it-abbr</div><div class="line">    - markdown-it-footnote</div><div class="line">    - markdown-it-ins</div><div class="line">    - markdown-it-sub</div><div class="line">    - markdown-it-sup</div><div class="line">    - markdown-it-emoji  #用emoji插件</div><div class="line">  anchors:</div><div class="line">   level: 1</div><div class="line">   collisionSuffix: &apos;v&apos;</div><div class="line">   permalink: true</div><div class="line">   permalinkClass: header-anchor</div><div class="line">   permalinkSymbol: &apos;&apos;</div></pre></td></tr></table></figure></p>
 <h2 id="基本配置结束"><a href="#基本配置结束" class="headerlink" title="基本配置结束"></a>基本配置结束</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">(```&gt;:(```) =&gt;     [ &apos;&gt;:(&apos;, &apos;&gt;:-(&apos; ],</div><div class="line">  (```:&quot;)```) =&gt;    [ &apos;:&quot;)&apos;, &apos;:-&quot;)&apos; ],</div><div class="line">  (```&lt;/3```) =&gt; [ &apos;&lt;/3&apos;, &apos;&lt;\\3&apos; ],</div><div class="line">  (```:/```) =&gt; [ &apos;:/&apos;, &apos;:-/&apos; ], </div><div class="line">  (```:,(```) =&gt; [ &apos;:,(&apos;, &apos;:,-(&apos; ],</div><div class="line">  (```:(```) =&gt; [ &apos;:(&apos;, &apos;:-(&apos; ],</div><div class="line">  (```&lt;3```) =&gt; [ &apos;&lt;3&apos; ],</div><div class="line">  (```]:(```) =&gt; [ &apos;]:(&apos;, &apos;]:-(&apos; ],</div><div class="line">  (```o:)```) =&gt; [ &apos;o:)&apos;, &apos;O:)&apos;, &apos;o:-)&apos;, &apos;O:-)&apos;, &apos;0:)&apos;, &apos;0:-)&apos; ],</div><div class="line">  (```:,)```) =&gt; [  &apos;:,)&apos;, &apos;:,-)&apos;, &quot;:&apos;D&quot;, &apos;:,D&apos;, &apos;:,-D&apos; ],</div><div class="line">  (```x-)```) =&gt; [ &apos;x-)&apos;, &apos;X-)&apos; ],</div><div class="line">  (```:|```) =&gt; [ &apos;:|&apos;, &apos;:-|&apos; ],</div><div class="line">  (```:o```) =&gt; [ &apos;:o&apos;, &apos;:-o&apos;, &apos;:O&apos;, &apos;:-O&apos; ],</div><div class="line">  (```:@```) =&gt; [ &apos;:@&apos;, &apos;:-@&apos; ],</div><div class="line">  (```:D```) =&gt; [ &apos;:D&apos;, &apos;:-D&apos; ],</div><div class="line">  (```:)```) =&gt; [ &apos;:)&apos;, &apos;:-)&apos; ],</div><div class="line">  (```]:)```) =&gt; [ &apos;]:)&apos;, &apos;]:-)&apos; ],</div><div class="line">  (```;(```) =&gt; [ &apos;;(&apos;, &apos;;-(&apos; ],</div><div class="line">  (```:P```) =&gt; [ &apos;:P&apos;, &apos;:-P&apos; ],</div><div class="line">  (```8-)```) =&gt; [ &apos;8-)&apos;, &apos;B-)&apos; ],</div><div class="line">  (```,:(```) =&gt; [ &apos;,:(&apos;, &apos;,:-(&apos; ],</div><div class="line">  (```,:)```) =&gt; [ &apos;,:)&apos;, &apos;,:-)&apos; ],</div><div class="line">  (```:s```) =&gt; [ &apos;:s&apos;, &apos;:-S&apos;, &apos;:z&apos;, &apos;:-Z&apos;, &apos;:$&apos;, &apos;:-$&apos; ],</div><div class="line">  (```;)```) =&gt; [ &apos;;)&apos;, &apos;;-)&apos; ]</div></pre></td></tr></table></figure>
-<p>基本表情对应如图<br><img src="/images/emoji.png" alt="表情图"></p>
+<p>基本表情对应如图<br><img src="/blog/images/emoji.png" alt="表情图"></p>
 <h2 id="使用twemoji表情"><a href="#使用twemoji表情" class="headerlink" title="使用twemoji表情"></a>使用twemoji表情</h2><p>使用twitter表情库,这快没配置,因为还不需要这么多表情,<br>服务器在国外感觉加载会有影响,暂时没配置。总结了使用方法如下</p>
 <h3 id="安装twemoji"><a href="#安装twemoji" class="headerlink" title="安装twemoji"></a>安装twemoji</h3><p><a href="https://github.com/twitter/twemoji" target="_blank" rel="external">twemoji</a><br>仍然是在markdown-it插件目录下clone twemoji<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git@github.com:twitter/twemoji.git</div></pre></td></tr></table></figure></p>
 <h3 id="配置markdown-it-emoji插件"><a href="#配置markdown-it-emoji插件" class="headerlink" title="配置markdown-it-emoji插件"></a>配置markdown-it-emoji插件</h3><p>要使用twemoji还没有结束，还需要<strong>配置markdown-it-emoji的index.js</strong><br>修改index.js：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> emojies_defs      = <span class="built_in">require</span>(<span class="string">'./lib/data/full.json'</span>);</div><div class="line"><span class="keyword">var</span> emojies_shortcuts = <span class="built_in">require</span>(<span class="string">'./lib/data/shortcuts'</span>);</div><div class="line"><span class="keyword">var</span> emoji_html        = <span class="built_in">require</span>(<span class="string">'./lib/render'</span>);</div><div class="line"><span class="keyword">var</span> emoji_replace     = <span class="built_in">require</span>(<span class="string">'./lib/replace'</span>);</div><div class="line"><span class="keyword">var</span> normalize_opts    = <span class="built_in">require</span>(<span class="string">'./lib/normalize_opts'</span>);</div><div class="line"><span class="keyword">var</span> twemoji           = <span class="built_in">require</span>(<span class="string">'twemoji'</span>)  <span class="comment">//添加twemoji</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">emoji_plugin</span>(<span class="params">md, options</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> defaults = &#123;</div><div class="line">    <span class="attr">defs</span>: emojies_defs,</div><div class="line">    <span class="attr">shortcuts</span>: emojies_shortcuts,</div><div class="line">    <span class="attr">enabled</span>: []</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> opts = normalize_opts(md.utils.assign(&#123;&#125;, defaults, options || &#123;&#125;));</div><div class="line"></div><div class="line">  md.renderer.rules.emoji = emoji_html;</div><div class="line"></div><div class="line">  md.core.ruler.push(<span class="string">'emoji'</span>, emoji_replace(md, opts.defs, opts.shortcuts, opts.scanRE, </div><div class="line">  opts.replaceRE));</div><div class="line">  </div><div class="line">  md.renderer.rules.emoji = <span class="function"><span class="keyword">function</span>(<span class="params">token, idx</span>) </span>&#123; <span class="comment">//修改规则</span></div><div class="line">  <span class="keyword">return</span> twemoji.parse(token[idx].content);</div><div class="line">  &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -494,18 +494,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">laravel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -518,11 +506,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">laravel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">migrate</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,19 +542,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
