@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.maweizhuo.com/2017/12/19/laravel-%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</loc>
+    
+    <lastmod>2017-12-19T07:07:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.maweizhuo.com/2017/12/14/array_map%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2017-12-14T09:33:30.000Z</lastmod>
