@@ -15,6 +15,7 @@
 <meta property="og:url" content="http://blog.maweizhuo.com/2017/07/17/laravel-migrate使用/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="前言 laravel 框架中的 migrate 类似于 git ，数据库的历史版本查看工具, 之前建立表结构都是从数据表中新建，迁移不是太方便，而使用laravel artisan 命令工具 可以很好的解决这个问题。适合于多人协同工作时候，数据库的迁移。  使用两次后，把操作流程记录如下： 1. 生成新表 12php artisan make:migration create_label_tabe">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-12-12T02:39:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel migrate使用">
@@ -368,7 +369,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-生成新表"><span class="toc-number">2.</span> <span class="toc-text">1. 生成新表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-新增表字段"><span class="toc-number">3.</span> <span class="toc-text">2. 新增表字段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-查看帮助"><span class="toc-number">4.</span> <span class="toc-text">3.  查看帮助</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-生成迁移"><span class="toc-number">5.</span> <span class="toc-text">4. 生成迁移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-字段配置"><span class="toc-number">6.</span> <span class="toc-text">5. 字段配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">6.0.0.1.</span> <span class="toc-text">引用</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-生成新表"><span class="toc-number">2.</span> <span class="toc-text"><a href="#1-&#x751F;&#x6210;&#x65B0;&#x8868;" class="headerlink" title="1. &#x751F;&#x6210;&#x65B0;&#x8868;"></a>1. &#x751F;&#x6210;&#x65B0;&#x8868;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-新增表字段"><span class="toc-number">3.</span> <span class="toc-text"><a href="#2-&#x65B0;&#x589E;&#x8868;&#x5B57;&#x6BB5;" class="headerlink" title="2. &#x65B0;&#x589E;&#x8868;&#x5B57;&#x6BB5;"></a>2. &#x65B0;&#x589E;&#x8868;&#x5B57;&#x6BB5;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-查看帮助"><span class="toc-number">4.</span> <span class="toc-text"><a href="#3-&#x67E5;&#x770B;&#x5E2E;&#x52A9;" class="headerlink" title="3.  &#x67E5;&#x770B;&#x5E2E;&#x52A9;"></a>3.  &#x67E5;&#x770B;&#x5E2E;&#x52A9;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-生成迁移"><span class="toc-number">5.</span> <span class="toc-text"><a href="#4-&#x751F;&#x6210;&#x8FC1;&#x79FB;" class="headerlink" title="4. &#x751F;&#x6210;&#x8FC1;&#x79FB;"></a>4. &#x751F;&#x6210;&#x8FC1;&#x79FB;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-字段配置"><span class="toc-number">6.</span> <span class="toc-text"><a href="#5-&#x5B57;&#x6BB5;&#x914D;&#x7F6E;" class="headerlink" title="5. &#x5B57;&#x6BB5;&#x914D;&#x7F6E;"></a>5. &#x5B57;&#x6BB5;&#x914D;&#x7F6E;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">6.0.0.1.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -492,15 +493,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">laravel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,14 +529,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
               </li>
              
@@ -545,6 +538,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">

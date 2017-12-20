@@ -15,6 +15,7 @@
 <meta property="og:url" content="http://blog.maweizhuo.com/2017/12/19/laravel-发送邮件/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="前言 laravel 框架中发送邮件配置及使用记录如下 1. 修改.envhost 和 port 一般可从邮箱服务中拿到 123456MAIL_DRIVER=smtpMAIL_HOST=smtp.163.com  一般就是smtp.网站名可在邮箱配置查询MAIL_PORT=465MAIL_USERNAME=xxx@163.comMAIL_PASSWORD=xxxxMAIL_ENCRYPTION=s">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-12-19T07:07:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel-发送邮件">
@@ -354,7 +355,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-修改-env"><span class="toc-number">2.</span> <span class="toc-text">1. 修改.env</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-修改config"><span class="toc-number">3.</span> <span class="toc-text">2. 修改config</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-发送文本邮件"><span class="toc-number">4.</span> <span class="toc-text">3.  发送文本邮件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-发送模板"><span class="toc-number">5.</span> <span class="toc-text">4. 发送模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-发送附件"><span class="toc-number">6.</span> <span class="toc-text">5. 发送附件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">6.0.0.1.</span> <span class="toc-text">引用</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-修改-env"><span class="toc-number">2.</span> <span class="toc-text"><a href="#1-&#x4FEE;&#x6539;-env" class="headerlink" title="1. &#x4FEE;&#x6539;.env"></a>1. &#x4FEE;&#x6539;.env</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-修改config"><span class="toc-number">3.</span> <span class="toc-text"><a href="#2-&#x4FEE;&#x6539;config" class="headerlink" title="2. &#x4FEE;&#x6539;config"></a>2. &#x4FEE;&#x6539;config</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-发送文本邮件"><span class="toc-number">4.</span> <span class="toc-text"><a href="#3-&#x53D1;&#x9001;&#x6587;&#x672C;&#x90AE;&#x4EF6;" class="headerlink" title="3.  &#x53D1;&#x9001;&#x6587;&#x672C;&#x90AE;&#x4EF6;"></a>3.  &#x53D1;&#x9001;&#x6587;&#x672C;&#x90AE;&#x4EF6;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-发送模板"><span class="toc-number">5.</span> <span class="toc-text"><a href="#4-&#x53D1;&#x9001;&#x6A21;&#x677F;" class="headerlink" title="4. &#x53D1;&#x9001;&#x6A21;&#x677F;"></a>4. &#x53D1;&#x9001;&#x6A21;&#x677F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-发送附件"><span class="toc-number">6.</span> <span class="toc-text"><a href="#5-&#x53D1;&#x9001;&#x9644;&#x4EF6;" class="headerlink" title="5. &#x53D1;&#x9001;&#x9644;&#x4EF6;"></a>5. &#x53D1;&#x9001;&#x9644;&#x4EF6;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">6.0.0.1.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -478,15 +479,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">laravel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,14 +515,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
               </li>
              
@@ -531,6 +524,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">

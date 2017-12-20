@@ -15,6 +15,7 @@
 <meta property="og:url" content="http://blog.maweizhuo.com/2017/11/01/php7-性能测试环境搭建/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="前言   之前并没关注过php的性能。偶然看到博客上一些PHP 进阶,就搭建环境研究下。   php5.3及之前都是用的xhprof ,这是一款Facebook研发的工具，不过很久不更新，不维护了。就不研究该工具了。   php7 的话采用的是  tideways + xhgui   参考文章 搭建php7的性能测试环境的方法 系统环境   我的Linux 环境是 tideways + xhgui">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-11-01T09:42:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php7 性能测试环境搭建">
@@ -186,7 +187,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>   之前并没关注过php的性能。偶然看到博客上一些PHP 进阶,就搭建环境研究下。<br>   php5.3及之前都是用的xhprof ,这是一款Facebook研发的工具，不过很久不更新，不维护了。就不研究该工具了。<br>   php7 的话采用的是  tideways + xhgui<br>   参考文章 <a href="http://www.php.cn/php-weizijiaocheng-380592.html" target="_blank" rel="external">搭建php7的性能测试环境的方法</a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>   之前并没关注过php的性能。偶然看到博客上一些PHP 进阶,就搭建环境研究下。<br>   php5.3及之前都是用的xhprof ,这是一款Facebook研发的工具，不过很久不更新，不维护了。就不研究该工具了。<br>   php7 的话采用的是  tideways + xhgui<br>   参考文章 <a href="http://www.php.cn/php-weizijiaocheng-380592.html" target="_blank" rel="noopener">搭建php7的性能测试环境的方法</a></p>
 <h1 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h1><p>   我的Linux 环境是 tideways + xhgui+ nginx + php7</p>
 <h1 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h1><ul>
 <li>MongoDB</li>
@@ -394,7 +395,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统环境"><span class="toc-number">2.</span> <span class="toc-text">系统环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装与配置"><span class="toc-number">3.</span> <span class="toc-text">安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb"><span class="toc-number">3.0.1.</span> <span class="toc-text">mongodb</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装"><span class="toc-number">3.0.1.1.</span> <span class="toc-text">1.安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-启动MongoDB"><span class="toc-number">3.0.1.2.</span> <span class="toc-text">2.启动MongoDB</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tideways"><span class="toc-number">3.0.2.</span> <span class="toc-text">tideways</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装-1"><span class="toc-number">3.0.2.1.</span> <span class="toc-text">1. 安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-配置php-ini"><span class="toc-number">3.0.2.2.</span> <span class="toc-text">2.配置php.ini</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-重启php-fpm"><span class="toc-number">3.0.2.3.</span> <span class="toc-text">3.重启php-fpm</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xhgui"><span class="toc-number">3.0.3.</span> <span class="toc-text">xhgui</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-简介"><span class="toc-number">3.0.3.1.</span> <span class="toc-text">1.简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-安装"><span class="toc-number">3.0.3.2.</span> <span class="toc-text">2.安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-mongo添加索引"><span class="toc-number">3.0.3.3.</span> <span class="toc-text">3.mongo添加索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Nginx配置"><span class="toc-number">3.0.3.4.</span> <span class="toc-text">4.Nginx配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-进一步优化配置"><span class="toc-number">3.0.3.5.</span> <span class="toc-text">5.进一步优化配置</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题汇总"><span class="toc-number">4.</span> <span class="toc-text">问题汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-xhgui-安装遇到问题"><span class="toc-number">4.0.1.</span> <span class="toc-text">1.xhgui 安装遇到问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-htpasswd-生成问题"><span class="toc-number">4.0.2.</span> <span class="toc-text">2. htpasswd 生成问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-页面403"><span class="toc-number">4.0.3.</span> <span class="toc-text">3. 页面403</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-页面无数据"><span class="toc-number">4.0.4.</span> <span class="toc-text">4. 页面无数据</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">4.0.4.0.1.</span> <span class="toc-text">引用</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统环境"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x7CFB;&#x7EDF;&#x73AF;&#x5883;" class="headerlink" title="&#x7CFB;&#x7EDF;&#x73AF;&#x5883;"></a>&#x7CFB;&#x7EDF;&#x73AF;&#x5883;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装与配置"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;" class="headerlink" title="&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;"></a>&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb"><span class="toc-number">3.0.1.</span> <span class="toc-text"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装"><span class="toc-number">3.0.1.1.</span> <span class="toc-text"><a href="#1-&#x5B89;&#x88C5;" class="headerlink" title="1.&#x5B89;&#x88C5;"></a>1.&#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-启动MongoDB"><span class="toc-number">3.0.1.2.</span> <span class="toc-text"><a href="#2-&#x542F;&#x52A8;MongoDB" class="headerlink" title="2.&#x542F;&#x52A8;MongoDB"></a>2.&#x542F;&#x52A8;MongoDB</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tideways"><span class="toc-number">3.0.2.</span> <span class="toc-text"><a href="#tideways" class="headerlink" title="tideways"></a>tideways</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装-1"><span class="toc-number">3.0.2.1.</span> <span class="toc-text"><a href="#1-&#x5B89;&#x88C5;-1" class="headerlink" title="1. &#x5B89;&#x88C5;"></a>1. &#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-配置php-ini"><span class="toc-number">3.0.2.2.</span> <span class="toc-text"><a href="#2-&#x914D;&#x7F6E;php-ini" class="headerlink" title="2.&#x914D;&#x7F6E;php.ini"></a>2.&#x914D;&#x7F6E;php.ini</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-重启php-fpm"><span class="toc-number">3.0.2.3.</span> <span class="toc-text"><a href="#3-&#x91CD;&#x542F;php-fpm" class="headerlink" title="3.&#x91CD;&#x542F;php-fpm"></a>3.&#x91CD;&#x542F;php-fpm</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xhgui"><span class="toc-number">3.0.3.</span> <span class="toc-text"><a href="#xhgui" class="headerlink" title="xhgui"></a>xhgui</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-简介"><span class="toc-number">3.0.3.1.</span> <span class="toc-text"><a href="#1-&#x7B80;&#x4ECB;" class="headerlink" title="1.&#x7B80;&#x4ECB;"></a>1.&#x7B80;&#x4ECB;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-安装"><span class="toc-number">3.0.3.2.</span> <span class="toc-text"><a href="#2-&#x5B89;&#x88C5;" class="headerlink" title="2.&#x5B89;&#x88C5;"></a>2.&#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-mongo添加索引"><span class="toc-number">3.0.3.3.</span> <span class="toc-text"><a href="#3-mongo&#x6DFB;&#x52A0;&#x7D22;&#x5F15;" class="headerlink" title="3.mongo&#x6DFB;&#x52A0;&#x7D22;&#x5F15;"></a>3.mongo&#x6DFB;&#x52A0;&#x7D22;&#x5F15;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Nginx配置"><span class="toc-number">3.0.3.4.</span> <span class="toc-text"><a href="#4-Nginx&#x914D;&#x7F6E;" class="headerlink" title="4.Nginx&#x914D;&#x7F6E;"></a>4.Nginx&#x914D;&#x7F6E;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-进一步优化配置"><span class="toc-number">3.0.3.5.</span> <span class="toc-text"><a href="#5-&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x914D;&#x7F6E;" class="headerlink" title="5.&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x914D;&#x7F6E;"></a>5.&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x914D;&#x7F6E;</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题汇总"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x95EE;&#x9898;&#x6C47;&#x603B;" class="headerlink" title="&#x95EE;&#x9898;&#x6C47;&#x603B;"></a>&#x95EE;&#x9898;&#x6C47;&#x603B;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-xhgui-安装遇到问题"><span class="toc-number">4.0.1.</span> <span class="toc-text"><a href="#1-xhgui-&#x5B89;&#x88C5;&#x9047;&#x5230;&#x95EE;&#x9898;" class="headerlink" title="1.xhgui &#x5B89;&#x88C5;&#x9047;&#x5230;&#x95EE;&#x9898;"></a>1.xhgui &#x5B89;&#x88C5;&#x9047;&#x5230;&#x95EE;&#x9898;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-htpasswd-生成问题"><span class="toc-number">4.0.2.</span> <span class="toc-text"><a href="#2-htpasswd-&#x751F;&#x6210;&#x95EE;&#x9898;" class="headerlink" title="2. htpasswd &#x751F;&#x6210;&#x95EE;&#x9898;"></a>2. htpasswd &#x751F;&#x6210;&#x95EE;&#x9898;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-页面403"><span class="toc-number">4.0.3.</span> <span class="toc-text"><a href="#3-&#x9875;&#x9762;403" class="headerlink" title="3. &#x9875;&#x9762;403"></a>3. &#x9875;&#x9762;403</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-页面无数据"><span class="toc-number">4.0.4.</span> <span class="toc-text"><a href="#4-&#x9875;&#x9762;&#x65E0;&#x6570;&#x636E;" class="headerlink" title="4. &#x9875;&#x9762;&#x65E0;&#x6570;&#x636E;"></a>4. &#x9875;&#x9762;&#x65E0;&#x6570;&#x636E;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">4.0.4.0.1.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -518,15 +519,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">laravel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,14 +555,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
               </li>
              
@@ -571,6 +564,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">

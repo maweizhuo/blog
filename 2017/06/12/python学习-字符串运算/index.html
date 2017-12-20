@@ -15,6 +15,7 @@
 <meta property="og:url" content="http://blog.maweizhuo.com/2017/06/12/python学习-字符串运算/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="本文主要是记录学习python 字符串相关知识点 ，进行记录  1. 定义变量12$ a = &apos;hello&apos; $ b = &apos;python&apos; 2. + =&amp;gt; 字符串拼接12345$ print a+b$ hellopython$ 注：,会在后面自动拼接个空格$ print a,b$ hello python">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-09-06T09:26:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习 字符串运算">
@@ -362,7 +363,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-定义变量"><span class="toc-number">1.</span> <span class="toc-text">1. 定义变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-gt-字符串拼接"><span class="toc-number">2.</span> <span class="toc-text">2. + => 字符串拼接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-gt-重复输出"><span class="toc-number">3.</span> <span class="toc-text">3. * => 重复输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-gt-按索引方式输出"><span class="toc-number">4.</span> <span class="toc-text">4. [] => 按索引方式输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-gt-截取字符一部分"><span class="toc-number">5.</span> <span class="toc-text">5.[:] =>截取字符一部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-in-gt-在范围内"><span class="toc-number">6.</span> <span class="toc-text">6. in => 在范围内</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-not-in-gt-不在范围内"><span class="toc-number">7.</span> <span class="toc-text">7. not in => 不在范围内</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-字符串赋值"><span class="toc-number">8.</span> <span class="toc-text">8. 字符串赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">8.0.0.1.</span> <span class="toc-text">引用</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-定义变量"><span class="toc-number">1.</span> <span class="toc-text"><a href="#1-&#x5B9A;&#x4E49;&#x53D8;&#x91CF;" class="headerlink" title="1. &#x5B9A;&#x4E49;&#x53D8;&#x91CF;"></a>1. &#x5B9A;&#x4E49;&#x53D8;&#x91CF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-gt-字符串拼接"><span class="toc-number">2.</span> <span class="toc-text"><a href="#2-gt-&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;" class="headerlink" title="2. + =&gt; &#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;"></a>2. + =&gt; &#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-gt-重复输出"><span class="toc-number">3.</span> <span class="toc-text"><a href="#3-gt-&#x91CD;&#x590D;&#x8F93;&#x51FA;" class="headerlink" title="3. * =&gt; &#x91CD;&#x590D;&#x8F93;&#x51FA;"></a>3. * =&gt; &#x91CD;&#x590D;&#x8F93;&#x51FA;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-gt-按索引方式输出"><span class="toc-number">4.</span> <span class="toc-text"><a href="#4-gt-&#x6309;&#x7D22;&#x5F15;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;" class="headerlink" title="4. [] =&gt; &#x6309;&#x7D22;&#x5F15;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;"></a>4. [] =&gt; &#x6309;&#x7D22;&#x5F15;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-gt-截取字符一部分"><span class="toc-number">5.</span> <span class="toc-text"><a href="#5-gt-&#x622A;&#x53D6;&#x5B57;&#x7B26;&#x4E00;&#x90E8;&#x5206;" class="headerlink" title="5.[:] =&gt;&#x622A;&#x53D6;&#x5B57;&#x7B26;&#x4E00;&#x90E8;&#x5206;"></a>5.[:] =&gt;&#x622A;&#x53D6;&#x5B57;&#x7B26;&#x4E00;&#x90E8;&#x5206;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-in-gt-在范围内"><span class="toc-number">6.</span> <span class="toc-text"><a href="#6-in-gt-&#x5728;&#x8303;&#x56F4;&#x5185;" class="headerlink" title="6. in =&gt; &#x5728;&#x8303;&#x56F4;&#x5185;"></a>6. in =&gt; &#x5728;&#x8303;&#x56F4;&#x5185;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-not-in-gt-不在范围内"><span class="toc-number">7.</span> <span class="toc-text"><a href="#7-not-in-gt-&#x4E0D;&#x5728;&#x8303;&#x56F4;&#x5185;" class="headerlink" title="7. not in =&gt; &#x4E0D;&#x5728;&#x8303;&#x56F4;&#x5185;"></a>7. not in =&gt; &#x4E0D;&#x5728;&#x8303;&#x56F4;&#x5185;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-字符串赋值"><span class="toc-number">8.</span> <span class="toc-text"><a href="#8-&#x5B57;&#x7B26;&#x4E32;&#x8D4B;&#x503C;" class="headerlink" title="8. &#x5B57;&#x7B26;&#x4E32;&#x8D4B;&#x503C;"></a>8. &#x5B57;&#x7B26;&#x4E32;&#x8D4B;&#x503C;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">8.0.0.1.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -486,15 +487,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">laravel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,14 +523,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
               </li>
              
@@ -539,6 +532,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">

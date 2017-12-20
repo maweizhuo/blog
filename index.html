@@ -15,6 +15,7 @@
 <meta property="og:url" content="http://blog.maweizhuo.com/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="maweizhuo blog 马伟倬 博客">
 <meta name="twitter:description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
@@ -360,7 +361,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>sometimes 写wiki或blog的时候,发现页面都是文字,觉得少点什么,想着能不能加上点<br>表情 （￣︶￣）↗ ,看着就更有趣了。[]~(￣▽￣)~*</p>
-<h2 id="使用markdown-it渲染"><a href="#使用markdown-it渲染" class="headerlink" title="使用markdown-it渲染"></a>使用markdown-it渲染</h2><p><a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="external">markdown-it</a></p>
+<h2 id="使用markdown-it渲染"><a href="#使用markdown-it渲染" class="headerlink" title="使用markdown-it渲染"></a>使用markdown-it渲染</h2><p><a href="https://github.com/celsomiranda/hexo-renderer-markdown-it" target="_blank" rel="noopener">markdown-it</a></p>
         
           <a class="article-more-a" href="/2017/11/28/hexo支持emoji表情/#more">展开全文 >></a>
         
@@ -540,7 +541,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>   之前并没关注过php的性能。偶然看到博客上一些PHP 进阶,就搭建环境研究下。<br>   php5.3及之前都是用的xhprof ,这是一款Facebook研发的工具，不过很久不更新，不维护了。就不研究该工具了。<br>   php7 的话采用的是  tideways + xhgui<br>   参考文章 <a href="http://www.php.cn/php-weizijiaocheng-380592.html" target="_blank" rel="external">搭建php7的性能测试环境的方法</a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>   之前并没关注过php的性能。偶然看到博客上一些PHP 进阶,就搭建环境研究下。<br>   php5.3及之前都是用的xhprof ,这是一款Facebook研发的工具，不过很久不更新，不维护了。就不研究该工具了。<br>   php7 的话采用的是  tideways + xhgui<br>   参考文章 <a href="http://www.php.cn/php-weizijiaocheng-380592.html" target="_blank" rel="noopener">搭建php7的性能测试环境的方法</a></p>
 <h1 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h1><p>   我的Linux 环境是 tideways + xhgui+ nginx + php7</p>
 <h1 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h1><ul>
 <li>MongoDB</li>
@@ -923,7 +924,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>kafka 适用于消息队列。用zookeeper 管理。php 版本支持的是0.9+，<br>php不需要开启kafka扩展，和zookeeper.so扩展(开发者用纯php语言写的kafka客户端)<br>文档参考：<a href="https://packagist.org/packages/nmred/kafka-php" target="_blank" rel="external">kafka PHP客户端使用</a></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>kafka 适用于消息队列。用zookeeper 管理。php 版本支持的是0.9+，<br>php不需要开启kafka扩展，和zookeeper.so扩展(开发者用纯php语言写的kafka客户端)<br>文档参考：<a href="https://packagist.org/packages/nmred/kafka-php" target="_blank" rel="noopener">kafka PHP客户端使用</a></p>
 <h2 id="1-安装下载-官网找版本"><a href="#1-安装下载-官网找版本" class="headerlink" title="1.安装下载 官网找版本"></a>1.安装下载 官网找版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.1.1/kafka_2.11-0.10.1.1.tgz</div></pre></td></tr></table></figure>
 <h2 id="2-配置config-server-properties"><a href="#2-配置config-server-properties" class="headerlink" title="2.配置config/server.properties"></a>2.配置config/server.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">listeners=PLAINTEXT://10.20.1.47:9092</div><div class="line">log.dirs= </div><div class="line">zookeeper.connect=10.20.1.47:2181</div></pre></td></tr></table></figure>
 <h2 id="3-配置host为ip模式"><a href="#3-配置host为ip模式" class="headerlink" title="3.配置host为ip模式"></a>3.配置host为ip模式</h2><p>zookeeper 和 producer，consumer host为ip模式<br>
@@ -1191,15 +1192,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">laravel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">emoji</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1227,14 +1228,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
               </li>
              
@@ -1244,6 +1237,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
