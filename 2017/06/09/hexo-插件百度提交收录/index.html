@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://blog.maweizhuo.com">
   <title>hexo 插件实现链接被百度提交收录 | maweizhuo blog 马伟倬 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.注册账号注册百度站长平台账号： 百度站长 2. 安装插件1234$ 安装插件针对谷歌和百度npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save$ hexo g 会生成 sitemap.xml 以及baidusitemap.xml 表面成功安装 3. 使用目的希望自己的网站">
+  <meta name="description" content="1.注册账号注册百度站长平台账号： 百度站长 2. 安装插件1234$ 安装插件针对谷歌和百度npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save$ hexo g 会生成 sitemap.xml 以及``````baidusitemap.xml 表面成功安装 3. 使用目的希">
 <meta name="keywords" content="百度收录,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 插件实现链接被百度提交收录">
 <meta property="og:url" content="http://blog.maweizhuo.com/2017/06/09/hexo-插件百度提交收录/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:description" content="1.注册账号注册百度站长平台账号： 百度站长 2. 安装插件1234$ 安装插件针对谷歌和百度npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save$ hexo g 会生成 sitemap.xml 以及baidusitemap.xml 表面成功安装 3. 使用目的希望自己的网站">
+<meta property="og:description" content="1.注册账号注册百度站长平台账号： 百度站长 2. 安装插件1234$ 安装插件针对谷歌和百度npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save$ hexo g 会生成 sitemap.xml 以及``````baidusitemap.xml 表面成功安装 3. 使用目的希">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-06T09:35:24.000Z">
+<meta property="og:updated_time" content="2017-12-25T08:05:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 插件实现链接被百度提交收录">
-<meta name="twitter:description" content="1.注册账号注册百度站长平台账号： 百度站长 2. 安装插件1234$ 安装插件针对谷歌和百度npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save$ hexo g 会生成 sitemap.xml 以及baidusitemap.xml 表面成功安装 3. 使用目的希望自己的网站">
+<meta name="twitter:description" content="1.注册账号注册百度站长平台账号： 百度站长 2. 安装插件1234$ 安装插件针对谷歌和百度npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save$ hexo g 会生成 sitemap.xml 以及``````baidusitemap.xml 表面成功安装 3. 使用目的希">
   
     <link rel="alternative" href="/atom.xml" title="maweizhuo blog 马伟倬 博客" type="application/atom+xml">
   
@@ -188,7 +188,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-注册账号"><a href="#1-注册账号" class="headerlink" title="1.注册账号"></a>1.注册账号</h2><p>注册百度站长平台账号： <a href="http://zhanzhang.baidu.com" target="_blank" rel="noopener">百度站长</a></p>
-<h2 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2. 安装插件"></a>2. 安装插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ 安装插件针对谷歌和百度</div><div class="line">npm install hexo-generator-sitemap --save</div><div class="line">npm install hexo-generator-baidu-sitemap --save</div><div class="line">$ hexo g 会生成 sitemap.xml 以及baidusitemap.xml 表面成功安装</div></pre></td></tr></table></figure>
+<h2 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2. 安装插件"></a>2. 安装插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ 安装插件针对谷歌和百度</div><div class="line">npm install hexo-generator-sitemap --save</div><div class="line">npm install hexo-generator-baidu-sitemap --save</div><div class="line">$ hexo g 会生成 sitemap.xml 以及``````baidusitemap.xml 表面成功安装</div></pre></td></tr></table></figure>
 <h2 id="3-使用目的"><a href="#3-使用目的" class="headerlink" title="3. 使用目的"></a>3. 使用目的</h2><p><code>希望自己的网站内容被第一时间收录</code><br><a id="more"></a></p>
 <h2 id="4-安装插件"><a href="#4-安装插件" class="headerlink" title="4. 安装插件"></a>4. 安装插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-baidu-url-submit --save</div></pre></td></tr></table></figure>
 <h2 id="5-配置修改"><a href="#5-配置修改" class="headerlink" title="5. 配置修改"></a>5. 配置修改</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ 在根目录下的_config.yml 新增如下配置</div><div class="line">$ baidu_url_submit:</div><div class="line"> count: 3 <span class="comment">## 比如3，代表提交最新的三个链接</span></div><div class="line"> host: http://imaye.oschina.io <span class="comment">## 在百度站长平台中注册的域名</span></div><div class="line"> token: your token secret <span class="comment">## 请注意这是您的秘钥， 请不要发布在公众仓库里!</span></div><div class="line"> path: baidusitemap.xml  <span class="comment">## 文本文档的地址， 新链接会保存在此文本文档里</span></div><div class="line"> $ 在deploy处新增</div><div class="line"> $ -type: baidu_url_submitter</div></pre></td></tr></table></figure>
@@ -495,19 +495,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">migrate</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,11 +519,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,6 +540,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
             
             <div class="clearfix"></div>
