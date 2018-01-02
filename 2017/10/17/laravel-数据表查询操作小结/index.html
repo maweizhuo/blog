@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&amp;apos;users&amp;apos;)-&amp;gt;where(&amp;apos;id&amp;apos;,&amp;apos;=&amp;apos;,1)-&amp;gt;first();$us">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-17T06:04:35.000Z">
+<meta property="og:updated_time" content="2018-01-02T06:00:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel 数据表查询操作小结 ">
 <meta name="twitter:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&amp;apos;users&amp;apos;)-&amp;gt;where(&amp;apos;id&amp;apos;,&amp;apos;=&amp;apos;,1)-&amp;gt;first();$us">
@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(&apos;users&apos;)</div><div class="line">                   -&gt;where(&apos;votes&apos;, &apos;&gt;&apos;, 100)</div><div class="line">                   -&gt;orWhere(&apos;name&apos;, &apos;John&apos;)</div><div class="line">                   -&gt;get();</div></pre></td></tr></table></figure>
 </li>
 <li><p>join 用法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">DB::table(&apos;users&apos;)</div><div class="line">       -&gt;leftJoin(&apos;posts&apos;, &apos;users.id&apos;, &apos;=&apos;, &apos;posts.user_id&apos;)</div><div class="line">       -&gt;get();</div><div class="line"></div><div class="line">// 两个表连接其中join on 两个条件</div><div class="line">     DB::table(&apos;users&apos;)</div><div class="line">       -&gt;join(&apos;contacts&apos;, function($join)</div><div class="line">       &#123;</div><div class="line">           join = $join-&gt;on(&apos;users.id&apos;, &apos;=&apos;, &apos;contacts.user_id&apos;);</div><div class="line">           join = $join-&gt;on(&apos;users.name&apos;, &apos;=&apos;, &apos;contacts.user_name);</div><div class="line">           return $join;</div><div class="line">       &#125;)</div><div class="line">       -&gt;get();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">DB::table(&apos;users&apos;)</div><div class="line">       -&gt;leftJoin(&apos;posts&apos;, &apos;users.id&apos;, &apos;=&apos;, &apos;posts.user_id&apos;)</div><div class="line">       -&gt;get();</div><div class="line"></div><div class="line">// 两个表连接其中join on 两个条件</div><div class="line">     DB::table(&apos;users&apos;)</div><div class="line">       -&gt;join(&apos;contacts&apos;, function($join)</div><div class="line">       &#123;</div><div class="line">           join = $join-&gt;on(&apos;users.id&apos;, &apos;=&apos;, &apos;contacts.user_id&apos;);</div><div class="line">           join = $join-&gt;on(&apos;users.name&apos;, &apos;=&apos;, &apos;contacts.user_name);</div><div class="line">           return $join;</div><div class="line">       &#125;)</div><div class="line">       -&gt;get();</div><div class="line"> // model join  的用法 </div><div class="line"> from() 方法可以给当前表名起别名</div><div class="line">   $task_is_publish = SourceTaskRelationship::from(&apos;source_task_relationship as st_rel&apos;)</div><div class="line">                   -&gt;join(&apos;tasks as task&apos;,&apos;st_rel.tid&apos;,&apos;=&apos;,&apos;task.id&apos;)</div><div class="line">                   -&gt;where(&apos;st_rel.sid&apos;, $task_source_id)</div><div class="line">                   -&gt;where(&apos;st_rel.import_source&apos;,$import_source_num)</div><div class="line">                   -&gt;where(&apos;st_rel.is_cancel&apos;, 0)</div><div class="line">                   -&gt;where(&apos;task.department&apos;, $department)</div><div class="line">                   -&gt;where(&apos;task.subject&apos;, $subject)</div><div class="line">                   -&gt;select(&apos;st_rel.*&apos;)</div><div class="line">                   -&gt;get()-&gt;toArray();</div></pre></td></tr></table></figure>
 </li>
 <li><p>闭包的用法比较好</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">FinalMark::where(&apos;subject&apos;, $subject)</div><div class="line">            -&gt;where(&apos;department&apos;, $department)</div><div class="line">            -&gt;when(!empty($data[&apos;source_id&apos;]), function ($query) use ($data) &#123;</div><div class="line">                return $query-&gt;where(&quot;source_id&quot;, $data[&apos;source_id&apos;]);</div><div class="line">            &#125;)</div><div class="line">            -&gt;get();</div></pre></td></tr></table></figure>
@@ -433,7 +433,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 weizhuo.ma
+    		&copy; 2018 weizhuo.ma
     		<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
     	</div>
       	
@@ -507,15 +507,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,7 +527,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">migrate</a>
+                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +535,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
+                <a href="javascript:void(0)" class="js-tag color3">migrate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,14 +555,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
               </li>
              
@@ -572,6 +564,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
