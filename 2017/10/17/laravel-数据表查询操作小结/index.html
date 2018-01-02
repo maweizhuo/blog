@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://blog.maweizhuo.com">
   <title>laravel 数据表查询操作小结  | maweizhuo blog 马伟倬 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&amp;apos;users&amp;apos;)-&amp;gt;where(&amp;apos;id&amp;apos;,&amp;apos;=&amp;apos;,1)-&amp;gt;first();$us">
+  <meta name="description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;w">
 <meta name="keywords" content="php,laravel,db操作相关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="laravel 数据表查询操作小结 ">
 <meta property="og:url" content="http://blog.maweizhuo.com/2017/10/17/laravel-数据表查询操作小结/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&amp;apos;users&amp;apos;)-&amp;gt;where(&amp;apos;id&amp;apos;,&amp;apos;=&amp;apos;,1)-&amp;gt;first();$us">
+<meta property="og:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-02T06:00:29.000Z">
+<meta property="og:updated_time" content="2018-01-02T06:02:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel 数据表查询操作小结 ">
-<meta name="twitter:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&amp;apos;users&amp;apos;)-&amp;gt;where(&amp;apos;id&amp;apos;,&amp;apos;=&amp;apos;,1)-&amp;gt;first();$us">
+<meta name="twitter:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;w">
   
     <link rel="alternative" href="/atom.xml" title="maweizhuo blog 马伟倬 博客" type="application/atom+xml">
   
@@ -194,33 +194,33 @@ var _hmt = _hmt || [];
 </ul>
 <h2 id="1-select"><a href="#1-select" class="headerlink" title="1. select"></a>1. select</h2><ul>
 <li><p>where whereIn  first 单条</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(&apos;users&apos;)-&gt;where(&apos;id&apos;,&apos;=&apos;,1)-&gt;first();</div><div class="line">$users = DB::table(&apos;users&apos;)-&gt;whereIn(&apos;id&apos;,[1,2,3])-&gt;get();</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(<span class="string">'users'</span>)-&gt;where(<span class="string">'id'</span>,<span class="string">'='</span>,<span class="number">1</span>)-&gt;first();</div><div class="line">$users = DB::table(<span class="string">'users'</span>)-&gt;whereIn(<span class="string">'id'</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])-&gt;get();</div></pre></td></tr></table></figure>
 <a id="more"></a>
 </li>
 </ul>
 <ul>
 <li><p>lists 取得单一字段值的列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(&apos;users&apos;)-&gt;lists(&apos;name&apos;);</div><div class="line">$users = DB::table(&apos;users&apos;)-&gt;lists(&apos;name&apos;,&apos;id&apos;);</div><div class="line">这个方式类似于php 数组 array_column($arr,&apos;v&apos;,&apos;k&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(<span class="string">'users'</span>)-&gt;lists(<span class="string">'name'</span>);</div><div class="line">$users = DB::table(<span class="string">'users'</span>)-&gt;lists(<span class="string">'name'</span>,<span class="string">'id'</span>);</div><div class="line">这个方式类似于php 数组 array_column($arr,<span class="string">'v'</span>,<span class="string">'k'</span>);</div></pre></td></tr></table></figure>
 </li>
 <li><p>pluck 单一数据列的单一字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$name = DB::table(&apos;users&apos;)-&gt;where(&apos;name&apos;, &apos;John&apos;)-&gt;pluck(&apos;name&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$name = DB::table(<span class="string">'users'</span>)-&gt;where(<span class="string">'name'</span>, <span class="string">'John'</span>)-&gt;pluck(<span class="string">'name'</span>);</div></pre></td></tr></table></figure>
 </li>
 <li><p>or 用法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(&apos;users&apos;)</div><div class="line">                   -&gt;where(&apos;votes&apos;, &apos;&gt;&apos;, 100)</div><div class="line">                   -&gt;orWhere(&apos;name&apos;, &apos;John&apos;)</div><div class="line">                   -&gt;get();</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(<span class="string">'users'</span>)</div><div class="line">                   -&gt;where(<span class="string">'votes'</span>, <span class="string">'&gt;'</span>, <span class="number">100</span>)</div><div class="line">                   -&gt;orWhere(<span class="string">'name'</span>, <span class="string">'John'</span>)</div><div class="line">                   -&gt;get();</div></pre></td></tr></table></figure>
 </li>
 <li><p>join 用法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">DB::table(&apos;users&apos;)</div><div class="line">       -&gt;leftJoin(&apos;posts&apos;, &apos;users.id&apos;, &apos;=&apos;, &apos;posts.user_id&apos;)</div><div class="line">       -&gt;get();</div><div class="line"></div><div class="line">// 两个表连接其中join on 两个条件</div><div class="line">     DB::table(&apos;users&apos;)</div><div class="line">       -&gt;join(&apos;contacts&apos;, function($join)</div><div class="line">       &#123;</div><div class="line">           join = $join-&gt;on(&apos;users.id&apos;, &apos;=&apos;, &apos;contacts.user_id&apos;);</div><div class="line">           join = $join-&gt;on(&apos;users.name&apos;, &apos;=&apos;, &apos;contacts.user_name);</div><div class="line">           return $join;</div><div class="line">       &#125;)</div><div class="line">       -&gt;get();</div><div class="line"> // model join  的用法 </div><div class="line"> from() 方法可以给当前表名起别名</div><div class="line">   $task_is_publish = SourceTaskRelationship::from(&apos;source_task_relationship as st_rel&apos;)</div><div class="line">                   -&gt;join(&apos;tasks as task&apos;,&apos;st_rel.tid&apos;,&apos;=&apos;,&apos;task.id&apos;)</div><div class="line">                   -&gt;where(&apos;st_rel.sid&apos;, $task_source_id)</div><div class="line">                   -&gt;where(&apos;st_rel.import_source&apos;,$import_source_num)</div><div class="line">                   -&gt;where(&apos;st_rel.is_cancel&apos;, 0)</div><div class="line">                   -&gt;where(&apos;task.department&apos;, $department)</div><div class="line">                   -&gt;where(&apos;task.subject&apos;, $subject)</div><div class="line">                   -&gt;select(&apos;st_rel.*&apos;)</div><div class="line">                   -&gt;get()-&gt;toArray();</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'users'</span>)</div><div class="line">       -&gt;leftJoin(<span class="string">'posts'</span>, <span class="string">'users.id'</span>, <span class="string">'='</span>, <span class="string">'posts.user_id'</span>)</div><div class="line">       -&gt;get();</div><div class="line"></div><div class="line"><span class="comment">// 两个表连接其中join on 两个条件</span></div><div class="line">     DB::table(<span class="string">'users'</span>)</div><div class="line">       -&gt;join(<span class="string">'contacts'</span>, <span class="function"><span class="keyword">function</span><span class="params">($join)</span></span></div><div class="line">       &#123;</div><div class="line">           join = $join-&gt;on(<span class="string">'users.id'</span>, <span class="string">'='</span>, <span class="string">'contacts.user_id'</span>);</div><div class="line">           join = $join-&gt;on(<span class="string">'users.name'</span>, <span class="string">'='</span>, <span class="string">'contacts.user_name);</span></div><div class="line">           return $join;</div><div class="line">       &#125;)</div><div class="line">       -&gt;get();</div><div class="line"> // model join  的用法 </div><div class="line"> from() 方法可以给当前表名起别名</div><div class="line">   $task_is_publish = SourceTaskRelationship::from('source_task_relationship <span class="keyword">as</span> st_rel<span class="string">')</span></div><div class="line">                   -&gt;join('tasks <span class="keyword">as</span> task<span class="string">','</span>st_rel.tid<span class="string">','</span>=<span class="string">','</span>task.id<span class="string">')</span></div><div class="line">                   -&gt;where('st_rel.sid<span class="string">', $task_source_id)</span></div><div class="line">                   -&gt;where('st_rel.import_source<span class="string">',$import_source_num)</span></div><div class="line">                   -&gt;where('st_rel.is_cancel<span class="string">', 0)</span></div><div class="line">                   -&gt;where('task.department<span class="string">', $department)</span></div><div class="line">                   -&gt;where('task.subject<span class="string">', $subject)</span></div><div class="line">                   -&gt;select('st_rel.*<span class="string">')</span></div><div class="line">                   -&gt;get()-&gt;toArray();</div></pre></td></tr></table></figure>
 </li>
 <li><p>闭包的用法比较好</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">FinalMark::where(&apos;subject&apos;, $subject)</div><div class="line">            -&gt;where(&apos;department&apos;, $department)</div><div class="line">            -&gt;when(!empty($data[&apos;source_id&apos;]), function ($query) use ($data) &#123;</div><div class="line">                return $query-&gt;where(&quot;source_id&quot;, $data[&apos;source_id&apos;]);</div><div class="line">            &#125;)</div><div class="line">            -&gt;get();</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">FinalMark::where(<span class="string">'subject'</span>, $subject)</div><div class="line">            -&gt;where(<span class="string">'department'</span>, $department)</div><div class="line">            -&gt;when(!<span class="keyword">empty</span>($data[<span class="string">'source_id'</span>]), <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> <span class="title">use</span> <span class="params">($data)</span> </span>&#123;</div><div class="line">                <span class="keyword">return</span> $query-&gt;where(<span class="string">"source_id"</span>, $data[<span class="string">'source_id'</span>]);</div><div class="line">            &#125;)</div><div class="line">            -&gt;get();</div></pre></td></tr></table></figure>
 </li>
 <li><p>聚合的使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(&apos;users&apos;)-&gt;count();</div><div class="line"></div><div class="line">$price = DB::table(&apos;orders&apos;)-&gt;max(&apos;price&apos;);</div><div class="line"></div><div class="line">$price = DB::table(&apos;orders&apos;)-&gt;min(&apos;price&apos;);</div><div class="line"></div><div class="line">$price = DB::table(&apos;orders&apos;)-&gt;avg(&apos;price&apos;);</div><div class="line"></div><div class="line">$total = DB::table(&apos;users&apos;)-&gt;sum(&apos;votes&apos;);</div></pre></td></tr></table></figure>
-<h2 id="2-insert"><a href="#2-insert" class="headerlink" title="2. insert"></a>2. insert</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DB::table(&apos;accounts&apos;)-&gt;insert([</div><div class="line">				&apos;name&apos;          =&gt; $item[&apos;name&apos;],</div><div class="line">				&apos;phone&apos;         =&gt; $item[&apos;phone&apos;],</div><div class="line">				&apos;password&apos;      =&gt; &apos;$2y$10$h1uSptHo5kDHyFNa6yYWkuTGVzbOycHxzbi2Xv1ju4TdKFf0QboWq&apos;, //123456 js:e10adc3949ba59abbe56e057f20f883e</div><div class="line">				&quot;roles&quot;         =&gt;  Roles::SuperAdmin,</div><div class="line">				&quot;userchangepwd&quot; =&gt; &quot;&quot;,</div><div class="line">				&apos;created_at&apos;    =&gt; Carbon::now()-&gt;format(&apos;Y-m-d H:i:s&apos;),</div><div class="line">				&apos;updated_at&apos;    =&gt; Carbon::now()-&gt;format(&apos;Y-m-d H:i:s&apos;),</div><div class="line">			]);</div></pre></td></tr></table></figure>
-<h2 id="3-update"><a href="#3-update" class="headerlink" title="3. update"></a>3. update</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">DB::table(&apos;accounts&apos;)-&gt;where(&apos;id&apos;,&apos;=&apos;,1)-&gt;update([</div><div class="line">						&apos;name&apos;          =&gt; $item[&apos;name&apos;],</div><div class="line">						&apos;phone&apos;         =&gt; $item[&apos;phone&apos;],</div><div class="line">						&apos;created_at&apos;    =&gt; Carbon::now()-&gt;format(&apos;Y-m-d H:i:s&apos;),</div><div class="line">						&apos;updated_at&apos;    =&gt; Carbon::now()-&gt;format(&apos;Y-m-d H:i:s&apos;),</div><div class="line">					]);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(<span class="string">'users'</span>)-&gt;count();</div><div class="line"></div><div class="line">$price = DB::table(<span class="string">'orders'</span>)-&gt;max(<span class="string">'price'</span>);</div><div class="line"></div><div class="line">$price = DB::table(<span class="string">'orders'</span>)-&gt;min(<span class="string">'price'</span>);</div><div class="line"></div><div class="line">$price = DB::table(<span class="string">'orders'</span>)-&gt;avg(<span class="string">'price'</span>);</div><div class="line"></div><div class="line">$total = DB::table(<span class="string">'users'</span>)-&gt;sum(<span class="string">'votes'</span>);</div></pre></td></tr></table></figure>
+<h2 id="2-insert"><a href="#2-insert" class="headerlink" title="2. insert"></a>2. insert</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;insert([</div><div class="line">				<span class="string">'name'</span>          =&gt; $item[<span class="string">'name'</span>],</div><div class="line">				<span class="string">'phone'</span>         =&gt; $item[<span class="string">'phone'</span>],</div><div class="line">				<span class="string">'password'</span>      =&gt; <span class="string">'$2y$10$h1uSptHo5kDHyFNa6yYWkuTGVzbOycHxzbi2Xv1ju4TdKFf0QboWq'</span>, <span class="comment">//123456 js:e10adc3949ba59abbe56e057f20f883e</span></div><div class="line">				<span class="string">"roles"</span>         =&gt;  Roles::SuperAdmin,</div><div class="line">				<span class="string">"userchangepwd"</span> =&gt; <span class="string">""</span>,</div><div class="line">				<span class="string">'created_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">				<span class="string">'updated_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">			]);</div></pre></td></tr></table></figure>
+<h2 id="3-update"><a href="#3-update" class="headerlink" title="3. update"></a>3. update</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;where(<span class="string">'id'</span>,<span class="string">'='</span>,<span class="number">1</span>)-&gt;update([</div><div class="line">						<span class="string">'name'</span>          =&gt; $item[<span class="string">'name'</span>],</div><div class="line">						<span class="string">'phone'</span>         =&gt; $item[<span class="string">'phone'</span>],</div><div class="line">						<span class="string">'created_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">						<span class="string">'updated_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">					]);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="4-delete"><a href="#4-delete" class="headerlink" title="4. delete"></a>4. delete</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DB::table(&apos;accounts&apos;)-&gt;where(&apos;id&apos;,&apos;=&apos;,1)-&gt;delete();</div></pre></td></tr></table></figure>
+<h2 id="4-delete"><a href="#4-delete" class="headerlink" title="4. delete"></a>4. delete</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;where(<span class="string">'id'</span>,<span class="string">'='</span>,<span class="number">1</span>)-&gt;delete();</div></pre></td></tr></table></figure>
 <h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><blockquote>
 <p>记录点滴，成为更好的自己。       — weizhuo.ma</p>
 </blockquote>
@@ -507,14 +507,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -523,11 +515,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">laravel</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
+                <a href="javascript:void(0)" class="js-tag color3">migrate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +535,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">migrate</a>
+                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,6 +555,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能测试</a>
               </li>
              
@@ -564,10 +568,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
