@@ -3,7 +3,7 @@
 ### 个人博客站
 [我的博客](http://blog.maweizhuo.com)
 [我的网站](http://maweizhuo.com)
-[我的博客](http://wiki.maweizhuo.com)
+[我的wiki](http://wiki.maweizhuo.com)
 
 
 ### 用途

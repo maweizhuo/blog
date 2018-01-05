@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://blog.maweizhuo.com">
-  <title>Archives: 2017 | maweizhuo blog 马伟倬 博客</title>
+  <title>php7新特性汇总 | maweizhuo blog 马伟倬 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
-<meta name="keywords" content="后端,php,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,个人原创,坚持原创">
-<meta property="og:type" content="website">
-<meta property="og:title" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:url" content="http://blog.maweizhuo.com/archives/2017/page/2/index.html">
+  <meta name="description" content="前言现在新的PHP版本到了PHP7,其中有些新特性整理下。前几次在线上遇到个坑。测试环境是PHP7,线上PHP5.6的;不经意使用了PHP7新特性的东西,线上报错了。故有必要整理文档参考：php7新特性 1.PHP 标量类型与返回值类型声明默认情况下，所有的PHP文件都处于弱类型校验模式。PHP 7 增加了标量类型声明的特性，标量类型声明有两种模式:">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php7新特性汇总">
+<meta property="og:url" content="http://blog.maweizhuo.com/2018/01/05/php7新特性汇总/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
+<meta property="og:description" content="前言现在新的PHP版本到了PHP7,其中有些新特性整理下。前几次在线上遇到个坑。测试环境是PHP7,线上PHP5.6的;不经意使用了PHP7新特性的东西,线上报错了。故有必要整理文档参考：php7新特性 1.PHP 标量类型与返回值类型声明默认情况下，所有的PHP文件都处于弱类型校验模式。PHP 7 增加了标量类型声明的特性，标量类型声明有两种模式:">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-05T05:57:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maweizhuo blog 马伟倬 博客">
-<meta name="twitter:description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
+<meta name="twitter:title" content="php7新特性汇总">
+<meta name="twitter:description" content="前言现在新的PHP版本到了PHP7,其中有些新特性整理下。前几次在线上遇到个坑。测试环境是PHP7,线上PHP5.6的;不经意使用了PHP7新特性的东西,线上报错了。故有必要整理文档参考：php7新特性 1.PHP 标量类型与返回值类型声明默认情况下，所有的PHP文件都处于弱类型校验模式。PHP 7 增加了标量类型声明的特性，标量类型声明有两种模式:">
   
     <link rel="alternative" href="/atom.xml" title="maweizhuo blog 马伟倬 博客" type="application/atom+xml">
   
@@ -166,36 +167,77 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-php7新特性汇总" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/17/laravel-migrate使用/" class="archive-article-date">
-  	<time datetime="2017-07-17T08:28:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/17/laravel-migrate使用/">laravel migrate使用</a>
+    <h1 class="article-title" itemprop="name">
+      php7新特性汇总
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/05/php7新特性汇总/" class="archive-article-date">
+  	<time datetime="2018-01-05T02:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>现在新的PHP版本到了PHP7,其中有些新特性整理下。<br>前几次在线上遇到个坑。测试环境是PHP7,线上PHP5.6的;<br>不经意使用了PHP7新特性的东西,线上报错了。故有必要整理<br>文档参考：<a href="http://www.runoob.com/php/php7-new-features.html" target="_blank" rel="noopener">php7新特性</a></p>
+<h2 id="1-PHP-标量类型与返回值类型声明"><a href="#1-PHP-标量类型与返回值类型声明" class="headerlink" title="1.PHP 标量类型与返回值类型声明"></a>1.PHP 标量类型与返回值类型声明</h2><p>默认情况下，所有的PHP文件都处于弱类型校验模式。<br>PHP 7 增加了标量类型声明的特性，标量类型声明有两种模式:<br><a id="more"></a></p>
+<ul>
+<li>强制模式 (默认)</li>
+<li>严格模式<br><code>declare(strict_types=1);</code><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 强制模式 </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(int ...$ints)</span> </span></div><div class="line">&#123; </div><div class="line">   <span class="keyword">return</span> array_sum($ints); </div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="keyword">print</span>(sum(<span class="number">2</span>, <span class="string">'3'</span>, <span class="number">4.1</span>));  </div><div class="line"> <span class="comment">// 输出9</span></div><div class="line"> </div><div class="line"> <span class="comment">// 严格模式 </span></div><div class="line"> <span class="keyword">declare</span>(strict_types=<span class="number">1</span>); </div><div class="line"> </div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(int ...$ints)</span> </span></div><div class="line"> &#123; </div><div class="line">    <span class="keyword">return</span> array_sum($ints); </div><div class="line"> &#125; </div><div class="line"> </div><div class="line"> <span class="keyword">print</span>(sum(<span class="number">2</span>, <span class="string">'3'</span>, <span class="number">4.1</span>)); </div><div class="line"> </div><div class="line"> <span class="comment">// 结果 : PHP Fatal error:  Uncaught </span></div><div class="line"> <span class="comment">// TypeError: Argument 2 passed to sum() must be of the type integer, </span></div><div class="line"> <span class="comment">// string given, called in……</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="2-配置config-server-properties"><a href="#2-配置config-server-properties" class="headerlink" title="2.配置config/server.properties"></a>2.配置config/server.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">listeners=PLAINTEXT://10.20.1.47:9092</div><div class="line">log.dirs= </div><div class="line">zookeeper.connect=10.20.1.47:2181</div></pre></td></tr></table></figure>
+<h2 id="3-配置host为ip模式"><a href="#3-配置host为ip模式" class="headerlink" title="3.配置host为ip模式"></a>3.配置host为ip模式</h2><p>zookeeper 和 producer，consumer host为ip模式</p>
+<h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><blockquote>
+<p>记录点滴，成为更好的自己。       — weizhuo.ma</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -203,19 +245,11 @@ var _hmt = _hmt || [];
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">laravel</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">migrate</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -228,213 +262,125 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://blog.maweizhuo.com/2018/01/05/php7新特性汇总/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/12/python学习-字符串运算/" class="archive-article-date">
-  	<time datetime="2017-06-12T06:45:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/29/2017年-年度总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2017年-年度总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/12/python学习-字符串运算/">python学习 字符串运算</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-PHP-标量类型与返回值类型声明"><span class="toc-number">2.</span> <span class="toc-text"><a href="#1-PHP-&#x6807;&#x91CF;&#x7C7B;&#x578B;&#x4E0E;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x58F0;&#x660E;" class="headerlink" title="1.PHP &#x6807;&#x91CF;&#x7C7B;&#x578B;&#x4E0E;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x58F0;&#x660E;"></a>1.PHP &#x6807;&#x91CF;&#x7C7B;&#x578B;&#x4E0E;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x58F0;&#x660E;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-配置config-server-properties"><span class="toc-number">3.</span> <span class="toc-text"><a href="#2-&#x914D;&#x7F6E;config-server-properties" class="headerlink" title="2.&#x914D;&#x7F6E;config/server.properties"></a>2.&#x914D;&#x7F6E;config/server.properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-配置host为ip模式"><span class="toc-number">4.</span> <span class="toc-text"><a href="#3-&#x914D;&#x7F6E;host&#x4E3A;ip&#x6A21;&#x5F0F;" class="headerlink" title="3.&#x914D;&#x7F6E;host&#x4E3A;ip&#x6A21;&#x5F0F;"></a>3.&#x914D;&#x7F6E;host&#x4E3A;ip&#x6A21;&#x5F0F;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">4.0.0.1.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/09/hexo-插件百度提交收录/" class="archive-article-date">
-  	<time datetime="2017-06-09T08:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/09/hexo-插件百度提交收录/">hexo 插件实现链接被百度提交收录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">百度收录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/26/markdown使用/" class="archive-article-date">
-  	<time datetime="2017-05-26T03:40:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/26/markdown使用/">markdown 笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/29/2016年-年度总结/" class="archive-article-date">
-  	<time datetime="2017-01-29T02:00:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/29/2016年-年度总结/">2016年-年度总结</a>
-    </h1>
+  <div id="SOHUCS" sid="php7新特性汇总" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cytcxc9Qr"; 
+var conf = "prod_e9244ca1c7b0ab698e6cdef0c5506d20"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/年度总结//" class="article-tag-list-link color5">年度总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/">&laquo; Prev</a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -457,8 +403,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
