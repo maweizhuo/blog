@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="前言   最近测试环境supervisor重启需要先查到他的进程id ,kill 掉, 再启动，感觉略low了点   于是乎想到可不可以写成一个命令。自动完成这些操作。   so,查了下相关linux命令,用shell执行即可 系统环境   Linux shell 脚本">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-20T08:26:56.000Z">
+<meta property="og:updated_time" content="2018-01-19T09:12:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux 初写shell文件">
 <meta name="twitter:description" content="前言   最近测试环境supervisor重启需要先查到他的进程id ,kill 掉, 再启动，感觉略low了点   于是乎想到可不可以写成一个命令。自动完成这些操作。   so,查了下相关linux命令,用shell执行即可 系统环境   Linux shell 脚本">
@@ -177,13 +177,13 @@
 <h1 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h1><p>   Linux</p>
 <h1 id="shell-脚本"><a href="#shell-脚本" class="headerlink" title="shell 脚本"></a>shell 脚本</h1><a id="more"></a>
 <h2 id="文件名称"><a href="#文件名称" class="headerlink" title="文件名称"></a>文件名称</h2><p>后缀需要是.sh </p>
-<h2 id="文件首行"><a href="#文件首行" class="headerlink" title="文件首行"></a>文件首行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div></pre></td></tr></table></figure>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1. 定义变量</div><div class="line">your_name=&apos;变量&apos;</div><div class="line">2. 使用变量</div><div class="line">echo &quot;$&#123;your_name&#125;&quot; </div><div class="line">大括号可以不用，但建议保留,</div><div class="line">echo 为输出命令</div><div class="line">3. 删除变量</div><div class="line">unset your_name</div></pre></td></tr></table></figure>
-<h2 id="linux-xargs-命令"><a href="#linux-xargs-命令" class="headerlink" title="linux xargs 命令"></a>linux xargs 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">xargs 是常用在管道符后面执行</div><div class="line">一般是取得管道符前面的数据取到作为参数进行执行</div><div class="line">eg. ps -A | grep &quot;supervisor&quot; | awk &apos;&#123;print $1&#125;&apos; | xargs kill</div><div class="line">上面语句 查出supervisor 的所有进程</div><div class="line">awk 取出所有的进程id</div><div class="line">xargs 删掉他们</div></pre></td></tr></table></figure>
-<h2 id="命令赋值"><a href="#命令赋值" class="headerlink" title="命令赋值"></a>命令赋值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">赋值用的是``不是单引号&apos;&apos;；</div><div class="line">eg. super_proc=`ps -A |grep &quot;supervisor&quot;| awk &apos;&#123;print $1&#125;&apos;`</div></pre></td></tr></table></figure>
+<h2 id="文件首行"><a href="#文件首行" class="headerlink" title="文件首行"></a>文件首行</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/bash</span></div></pre></td></tr></table></figure>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 定义变量</div><div class="line">your_name=<span class="string">'变量'</span></div><div class="line"><span class="number">2.</span> 使用变量</div><div class="line"><span class="keyword">echo</span> <span class="string">"$&#123;your_name&#125;"</span> </div><div class="line">大括号可以不用，但建议保留,</div><div class="line"><span class="keyword">echo</span> 为输出命令</div><div class="line"><span class="number">3.</span> 删除变量</div><div class="line"><span class="keyword">unset</span> your_name</div></pre></td></tr></table></figure>
+<h2 id="linux-xargs-命令"><a href="#linux-xargs-命令" class="headerlink" title="linux xargs 命令"></a>linux xargs 命令</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">xargs 是常用在管道符后面执行</div><div class="line">一般是取得管道符前面的数据取到作为参数进行执行</div><div class="line">eg. ps -A | grep <span class="string">"supervisor"</span> | awk <span class="string">'&#123;print $1&#125;'</span> | xargs kill</div><div class="line">上面语句 查出supervisor 的所有进程</div><div class="line">awk 取出所有的进程id</div><div class="line">xargs 删掉他们</div></pre></td></tr></table></figure>
+<h2 id="命令赋值"><a href="#命令赋值" class="headerlink" title="命令赋值"></a>命令赋值</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">赋值用的是``不是单引号<span class="string">''</span>；</div><div class="line">eg. super_proc=`ps -A |grep <span class="string">"supervisor"</span>| awk <span class="string">'&#123;print $1&#125;'</span>`</div></pre></td></tr></table></figure>
 <h2 id="其他用法"><a href="#其他用法" class="headerlink" title="其他用法"></a>其他用法</h2><p> shell其他用法正在学习中,之后再进行补偿</p>
-<h2 id="shell样例"><a href="#shell样例" class="headerlink" title="shell样例"></a>shell样例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">echo &quot;开始查找supervisor进程&quot;</div><div class="line">super_proc=`ps -A |grep &quot;supervisor&quot;| awk &apos;&#123;print $1&#125;&apos;`</div><div class="line">echo &quot;supoervisor进程是$&#123;super_proc&#125;&quot;</div><div class="line">ps -A |grep &quot;supervisor&quot;| awk &apos;&#123;print $1&#125;&apos; | xargs kill</div><div class="line">echo &quot;$&#123;super_proc&#125;进程已删除&quot;</div><div class="line">/usr/bin/supervisord -c /etc/supervisord.conf</div><div class="line">echo &quot;supervisor 已成功启动&quot;</div></pre></td></tr></table></figure>
-<h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><blockquote>
+<h2 id="shell样例"><a href="#shell样例" class="headerlink" title="shell样例"></a>shell样例</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/bash</span></div><div class="line"><span class="keyword">echo</span> <span class="string">"开始查找supervisor进程"</span></div><div class="line">super_proc=`ps -A |grep <span class="string">"supervisor"</span>| awk <span class="string">'&#123;print $1&#125;'</span>`</div><div class="line"><span class="keyword">echo</span> <span class="string">"supoervisor进程是$&#123;super_proc&#125;"</span></div><div class="line">ps -A |grep <span class="string">"supervisor"</span>| awk <span class="string">'&#123;print $1&#125;'</span> | xargs kill</div><div class="line"><span class="keyword">echo</span> <span class="string">"$&#123;super_proc&#125;进程已删除"</span></div><div class="line">/usr/bin/supervisord -c /etc/supervisord.conf</div><div class="line"><span class="keyword">echo</span> <span class="string">"supervisor 已成功启动"</span></div></pre></td></tr></table></figure>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
 <p>记录点滴，成为更好的自己。       — weizhuo.ma</p>
 </blockquote>
 
@@ -357,7 +357,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统环境"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x7CFB;&#x7EDF;&#x73AF;&#x5883;" class="headerlink" title="&#x7CFB;&#x7EDF;&#x73AF;&#x5883;"></a>&#x7CFB;&#x7EDF;&#x73AF;&#x5883;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shell-脚本"><span class="toc-number">3.</span> <span class="toc-text"><a href="#shell-&#x811A;&#x672C;" class="headerlink" title="shell &#x811A;&#x672C;"></a>shell &#x811A;&#x672C;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件名称"><span class="toc-number">3.1.</span> <span class="toc-text"><a href="#&#x6587;&#x4EF6;&#x540D;&#x79F0;" class="headerlink" title="&#x6587;&#x4EF6;&#x540D;&#x79F0;"></a>&#x6587;&#x4EF6;&#x540D;&#x79F0;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件首行"><span class="toc-number">3.2.</span> <span class="toc-text"><a href="#&#x6587;&#x4EF6;&#x9996;&#x884C;" class="headerlink" title="&#x6587;&#x4EF6;&#x9996;&#x884C;"></a>&#x6587;&#x4EF6;&#x9996;&#x884C;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量"><span class="toc-number">3.3.</span> <span class="toc-text"><a href="#&#x53D8;&#x91CF;" class="headerlink" title="&#x53D8;&#x91CF;"></a>&#x53D8;&#x91CF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-xargs-命令"><span class="toc-number">3.4.</span> <span class="toc-text"><a href="#linux-xargs-&#x547D;&#x4EE4;" class="headerlink" title="linux xargs &#x547D;&#x4EE4;"></a>linux xargs &#x547D;&#x4EE4;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令赋值"><span class="toc-number">3.5.</span> <span class="toc-text"><a href="#&#x547D;&#x4EE4;&#x8D4B;&#x503C;" class="headerlink" title="&#x547D;&#x4EE4;&#x8D4B;&#x503C;"></a>&#x547D;&#x4EE4;&#x8D4B;&#x503C;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他用法"><span class="toc-number">3.6.</span> <span class="toc-text"><a href="#&#x5176;&#x4ED6;&#x7528;&#x6CD5;" class="headerlink" title="&#x5176;&#x4ED6;&#x7528;&#x6CD5;"></a>&#x5176;&#x4ED6;&#x7528;&#x6CD5;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell样例"><span class="toc-number">3.7.</span> <span class="toc-text"><a href="#shell&#x6837;&#x4F8B;" class="headerlink" title="shell&#x6837;&#x4F8B;"></a>shell&#x6837;&#x4F8B;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">3.7.0.0.1.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统环境"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x7CFB;&#x7EDF;&#x73AF;&#x5883;" class="headerlink" title="&#x7CFB;&#x7EDF;&#x73AF;&#x5883;"></a>&#x7CFB;&#x7EDF;&#x73AF;&#x5883;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shell-脚本"><span class="toc-number">3.</span> <span class="toc-text"><a href="#shell-&#x811A;&#x672C;" class="headerlink" title="shell &#x811A;&#x672C;"></a>shell &#x811A;&#x672C;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件名称"><span class="toc-number">3.1.</span> <span class="toc-text"><a href="#&#x6587;&#x4EF6;&#x540D;&#x79F0;" class="headerlink" title="&#x6587;&#x4EF6;&#x540D;&#x79F0;"></a>&#x6587;&#x4EF6;&#x540D;&#x79F0;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件首行"><span class="toc-number">3.2.</span> <span class="toc-text"><a href="#&#x6587;&#x4EF6;&#x9996;&#x884C;" class="headerlink" title="&#x6587;&#x4EF6;&#x9996;&#x884C;"></a>&#x6587;&#x4EF6;&#x9996;&#x884C;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量"><span class="toc-number">3.3.</span> <span class="toc-text"><a href="#&#x53D8;&#x91CF;" class="headerlink" title="&#x53D8;&#x91CF;"></a>&#x53D8;&#x91CF;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-xargs-命令"><span class="toc-number">3.4.</span> <span class="toc-text"><a href="#linux-xargs-&#x547D;&#x4EE4;" class="headerlink" title="linux xargs &#x547D;&#x4EE4;"></a>linux xargs &#x547D;&#x4EE4;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令赋值"><span class="toc-number">3.5.</span> <span class="toc-text"><a href="#&#x547D;&#x4EE4;&#x8D4B;&#x503C;" class="headerlink" title="&#x547D;&#x4EE4;&#x8D4B;&#x503C;"></a>&#x547D;&#x4EE4;&#x8D4B;&#x503C;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他用法"><span class="toc-number">3.6.</span> <span class="toc-text"><a href="#&#x5176;&#x4ED6;&#x7528;&#x6CD5;" class="headerlink" title="&#x5176;&#x4ED6;&#x7528;&#x6CD5;"></a>&#x5176;&#x4ED6;&#x7528;&#x6CD5;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell样例"><span class="toc-number">3.7.</span> <span class="toc-text"><a href="#shell&#x6837;&#x4F8B;" class="headerlink" title="shell&#x6837;&#x4F8B;"></a>shell&#x6837;&#x4F8B;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-number">3.8.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -478,6 +478,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -510,19 +514,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xargs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,11 +534,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">

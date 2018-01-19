@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://blog.maweizhuo.com">
   <title>laravel 数据表查询操作小结  | maweizhuo blog 马伟倬 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;w">
+  <meta name="description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;wher">
 <meta name="keywords" content="php,laravel,db操作相关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="laravel 数据表查询操作小结 ">
 <meta property="og:url" content="http://blog.maweizhuo.com/2017/10/17/laravel-数据表查询操作小结/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;w">
+<meta property="og:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;wher">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-02T06:02:46.000Z">
+<meta property="og:updated_time" content="2018-01-19T09:11:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel 数据表查询操作小结 ">
-<meta name="twitter:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  1. select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;w">
+<meta name="twitter:description" content="前言 laravel 数据库curd 查询有两种方式  DB 操作 Model ORM 操作两者使用基本一致。全文以DB为例进行总结。  select where whereIn  first 单条 12$users = DB::table(&apos;users&apos;)-&amp;gt;where(&apos;id&apos;,&apos;=&apos;,1)-&amp;gt;first();$users = DB::table(&apos;users&apos;)-&amp;gt;wher">
   
     <link rel="alternative" href="/atom.xml" title="maweizhuo blog 马伟倬 博客" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
 <li>DB 操作</li>
 <li>Model ORM 操作<br>两者使用基本一致。全文以DB为例进行总结。</li>
 </ul>
-<h2 id="1-select"><a href="#1-select" class="headerlink" title="1. select"></a>1. select</h2><ul>
+<h2 id="select"><a href="#select" class="headerlink" title="select"></a>select</h2><ul>
 <li><p>where whereIn  first 单条</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(<span class="string">'users'</span>)-&gt;where(<span class="string">'id'</span>,<span class="string">'='</span>,<span class="number">1</span>)-&gt;first();</div><div class="line">$users = DB::table(<span class="string">'users'</span>)-&gt;whereIn(<span class="string">'id'</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])-&gt;get();</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -202,12 +202,12 @@
 </li>
 <li><p>聚合的使用</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$users = DB::table(<span class="string">'users'</span>)-&gt;count();</div><div class="line"></div><div class="line">$price = DB::table(<span class="string">'orders'</span>)-&gt;max(<span class="string">'price'</span>);</div><div class="line"></div><div class="line">$price = DB::table(<span class="string">'orders'</span>)-&gt;min(<span class="string">'price'</span>);</div><div class="line"></div><div class="line">$price = DB::table(<span class="string">'orders'</span>)-&gt;avg(<span class="string">'price'</span>);</div><div class="line"></div><div class="line">$total = DB::table(<span class="string">'users'</span>)-&gt;sum(<span class="string">'votes'</span>);</div></pre></td></tr></table></figure>
-<h2 id="2-insert"><a href="#2-insert" class="headerlink" title="2. insert"></a>2. insert</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;insert([</div><div class="line">				<span class="string">'name'</span>          =&gt; $item[<span class="string">'name'</span>],</div><div class="line">				<span class="string">'phone'</span>         =&gt; $item[<span class="string">'phone'</span>],</div><div class="line">				<span class="string">'password'</span>      =&gt; <span class="string">'$2y$10$h1uSptHo5kDHyFNa6yYWkuTGVzbOycHxzbi2Xv1ju4TdKFf0QboWq'</span>, <span class="comment">//123456 js:e10adc3949ba59abbe56e057f20f883e</span></div><div class="line">				<span class="string">"roles"</span>         =&gt;  Roles::SuperAdmin,</div><div class="line">				<span class="string">"userchangepwd"</span> =&gt; <span class="string">""</span>,</div><div class="line">				<span class="string">'created_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">				<span class="string">'updated_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">			]);</div></pre></td></tr></table></figure>
-<h2 id="3-update"><a href="#3-update" class="headerlink" title="3. update"></a>3. update</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;where(<span class="string">'id'</span>,<span class="string">'='</span>,<span class="number">1</span>)-&gt;update([</div><div class="line">						<span class="string">'name'</span>          =&gt; $item[<span class="string">'name'</span>],</div><div class="line">						<span class="string">'phone'</span>         =&gt; $item[<span class="string">'phone'</span>],</div><div class="line">						<span class="string">'created_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">						<span class="string">'updated_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">					]);</div></pre></td></tr></table></figure>
+<h2 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;insert([</div><div class="line">				<span class="string">'name'</span>          =&gt; $item[<span class="string">'name'</span>],</div><div class="line">				<span class="string">'phone'</span>         =&gt; $item[<span class="string">'phone'</span>],</div><div class="line">				<span class="string">'password'</span>      =&gt; <span class="string">'$2y$10$h1uSptHo5kDHyFNa6yYWkuTGVzbOycHxzbi2Xv1ju4TdKFf0QboWq'</span>, <span class="comment">//123456 js:e10adc3949ba59abbe56e057f20f883e</span></div><div class="line">				<span class="string">"roles"</span>         =&gt;  Roles::SuperAdmin,</div><div class="line">				<span class="string">"userchangepwd"</span> =&gt; <span class="string">""</span>,</div><div class="line">				<span class="string">'created_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">				<span class="string">'updated_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">			]);</div></pre></td></tr></table></figure>
+<h2 id="update"><a href="#update" class="headerlink" title="update"></a>update</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;where(<span class="string">'id'</span>,<span class="string">'='</span>,<span class="number">1</span>)-&gt;update([</div><div class="line">						<span class="string">'name'</span>          =&gt; $item[<span class="string">'name'</span>],</div><div class="line">						<span class="string">'phone'</span>         =&gt; $item[<span class="string">'phone'</span>],</div><div class="line">						<span class="string">'created_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">						<span class="string">'updated_at'</span>    =&gt; Carbon::now()-&gt;format(<span class="string">'Y-m-d H:i:s'</span>),</div><div class="line">					]);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="4-delete"><a href="#4-delete" class="headerlink" title="4. delete"></a>4. delete</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;where(<span class="string">'id'</span>,<span class="string">'='</span>,<span class="number">1</span>)-&gt;delete();</div></pre></td></tr></table></figure>
-<h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><blockquote>
+<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DB::table(<span class="string">'accounts'</span>)-&gt;where(<span class="string">'id'</span>,<span class="string">'='</span>,<span class="number">1</span>)-&gt;delete();</div></pre></td></tr></table></figure>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
 <p>记录点滴，成为更好的自己。       — weizhuo.ma</p>
 </blockquote>
 
@@ -381,7 +381,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-select"><span class="toc-number">2.</span> <span class="toc-text"><a href="#1-select" class="headerlink" title="1. select"></a>1. select</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-insert"><span class="toc-number">3.</span> <span class="toc-text"><a href="#2-insert" class="headerlink" title="2. insert"></a>2. insert</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-update"><span class="toc-number">4.</span> <span class="toc-text"><a href="#3-update" class="headerlink" title="3. update"></a>3. update</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-delete"><span class="toc-number">5.</span> <span class="toc-text"><a href="#4-delete" class="headerlink" title="4. delete"></a>4. delete</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">5.0.0.1.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#select"><span class="toc-number">2.</span> <span class="toc-text"><a href="#select" class="headerlink" title="select"></a>select</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#insert"><span class="toc-number">3.</span> <span class="toc-text"><a href="#insert" class="headerlink" title="insert"></a>insert</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#update"><span class="toc-number">4.</span> <span class="toc-text"><a href="#update" class="headerlink" title="update"></a>update</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#delete"><span class="toc-number">5.</span> <span class="toc-text"><a href="#delete" class="headerlink" title="delete"></a>delete</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -502,6 +502,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -534,19 +538,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xargs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,11 +558,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">

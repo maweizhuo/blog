@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="前言PHP面试中基本会问到手写算法，其实主要是一种算法思想，一种思路现总结归纳如下：  冒泡排序 快速排序 二分查找">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-06T09:30:12.000Z">
+<meta property="og:updated_time" content="2018-01-19T09:17:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php算法小结">
 <meta name="twitter:description" content="前言PHP面试中基本会问到手写算法，其实主要是一种算法思想，一种思路现总结归纳如下：  冒泡排序 快速排序 二分查找">
@@ -184,7 +184,7 @@
 <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p><b>思路分析：</b>选择一个基准元素，通常选择第一个元素或者最后一个元素。通过一趟扫描，将待排序列分成两部分，一部分比基准元素小，一部分大于等于基准元素。此时基准元素在其排好序后的正确位置，然后再用同样的方法递归地排序划分的两部分。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 快速排序 </div><div class="line">*/</div><div class="line"><span class="keyword">function</span> quick_sort(<span class="variable">$arr</span>)&#123;</div><div class="line">    <span class="variable">$len</span> = count(<span class="variable">$arr</span>);</div><div class="line">    <span class="keyword">if</span>(<span class="variable">$len</span> &lt;= 1)&#123;</div><div class="line">        <span class="built_in">return</span> <span class="variable">$arr</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="variable">$left_arr</span> = [];</div><div class="line">    <span class="variable">$right_arr</span> = [];</div><div class="line">    <span class="variable">$base_num</span> = <span class="variable">$arr</span>[0];</div><div class="line">    <span class="keyword">for</span>(<span class="variable">$i</span>=1;<span class="variable">$i</span>&lt;<span class="variable">$len</span>;<span class="variable">$i</span>++)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="variable">$base_num</span> &gt; <span class="variable">$arr</span>[<span class="variable">$i</span>])&#123;</div><div class="line">            <span class="variable">$left_arr</span>[] = <span class="variable">$arr</span>[<span class="variable">$i</span>]; </div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">           <span class="variable">$right_arr</span>[] = <span class="variable">$arr</span>[<span class="variable">$i</span>]; </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="variable">$left_arr</span> = quick_sort(<span class="variable">$left_arr</span>);</div><div class="line">    <span class="variable">$right_arr</span> = quick_sort(<span class="variable">$right_arr</span>);</div><div class="line">    <span class="variable">$arr</span> = array_merge(<span class="variable">$left_arr</span>,[<span class="variable">$base_num</span>],<span class="variable">$right_arr</span>);</div><div class="line">    <span class="built_in">return</span> <span class="variable">$arr</span>;</div><div class="line">&#125;</div><div class="line"><span class="variable">$arr</span>=array(1,43,54,62,21,66,32,78,36,76,39);  </div><div class="line"><span class="variable">$a</span> = quick_sort(<span class="variable">$arr</span>);</div><div class="line">var_dump(<span class="variable">$a</span>);</div></pre></td></tr></table></figure></p>
 <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p><b>思路分析：</b>一个有序数组，根据某个值查找这个元素所在数组的键，思路是折半查找</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 二分查找（折半查找）</div><div class="line"> * 前提数组是规则的递增或递减</div><div class="line"> * @param <span class="variable">$arr</span> 数组</div><div class="line"> * @param <span class="variable">$val</span> 查找的数值</div><div class="line"> * @<span class="built_in">return</span>   数组值的键值or <span class="literal">false</span></div><div class="line"> */</div><div class="line"><span class="keyword">function</span> search(Array <span class="variable">$arr</span>,<span class="variable">$val</span>)&#123;</div><div class="line">    <span class="variable">$low</span> = 0;</div><div class="line">    <span class="variable">$high</span> = count(<span class="variable">$arr</span>)-1;</div><div class="line">    <span class="keyword">while</span>(<span class="variable">$low</span>&lt;=<span class="variable">$high</span>)&#123;</div><div class="line">        // 取中间数组的键值</div><div class="line">        <span class="variable">$mid</span> = floor((<span class="variable">$high</span>+<span class="variable">$low</span>)/2);</div><div class="line">        // 相等返回数据</div><div class="line">        <span class="keyword">if</span>(<span class="variable">$arr</span>[<span class="variable">$mid</span>] == <span class="variable">$val</span>)&#123;</div><div class="line">            <span class="built_in">return</span> <span class="variable">$mid</span>;</div><div class="line">        &#125;</div><div class="line">        // 如果中间数据大于右侧,取左侧最大值</div><div class="line">        <span class="keyword">if</span>(<span class="variable">$arr</span>[<span class="variable">$mid</span>]&gt;<span class="variable">$val</span>)&#123;</div><div class="line">            <span class="variable">$high</span> = <span class="variable">$mid</span>-1;</div><div class="line">        &#125;</div><div class="line">        // 如果中间数小于右侧，取出右侧最小值</div><div class="line">        <span class="keyword">if</span>(<span class="variable">$arr</span>[<span class="variable">$mid</span>]&lt;<span class="variable">$val</span>)&#123;</div><div class="line">            <span class="variable">$low</span> = <span class="variable">$mid</span>+1; </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    // 查找错误</div><div class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="variable">$arr_test</span> = array(1,2,4,7,9,13,16,20,23,25);</div><div class="line"><span class="variable">$a</span> = search(<span class="variable">$arr_test</span>,23);</div><div class="line">var_dump(<span class="variable">$a</span>);</div></pre></td></tr></table></figure>
-<h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><blockquote>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
 <p>记录点滴，成为更好的自己。     — weizhuo.ma</p>
 </blockquote>
 
@@ -354,7 +354,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#冒泡排序"><span class="toc-number">1.1.</span> <span class="toc-text"><a href="#&#x5192;&#x6CE1;&#x6392;&#x5E8F;" class="headerlink" title="&#x5192;&#x6CE1;&#x6392;&#x5E8F;"></a>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速排序"><span class="toc-number">1.2.</span> <span class="toc-text"><a href="#&#x5FEB;&#x901F;&#x6392;&#x5E8F;" class="headerlink" title="&#x5FEB;&#x901F;&#x6392;&#x5E8F;"></a>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二分查找"><span class="toc-number">1.3.</span> <span class="toc-text"><a href="#&#x4E8C;&#x5206;&#x67E5;&#x627E;" class="headerlink" title="&#x4E8C;&#x5206;&#x67E5;&#x627E;"></a>&#x4E8C;&#x5206;&#x67E5;&#x627E;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用"><span class="toc-number">1.3.0.0.1.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#冒泡排序"><span class="toc-number">1.1.</span> <span class="toc-text"><a href="#&#x5192;&#x6CE1;&#x6392;&#x5E8F;" class="headerlink" title="&#x5192;&#x6CE1;&#x6392;&#x5E8F;"></a>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速排序"><span class="toc-number">1.2.</span> <span class="toc-text"><a href="#&#x5FEB;&#x901F;&#x6392;&#x5E8F;" class="headerlink" title="&#x5FEB;&#x901F;&#x6392;&#x5E8F;"></a>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二分查找"><span class="toc-number">1.3.</span> <span class="toc-text"><a href="#&#x4E8C;&#x5206;&#x67E5;&#x627E;" class="headerlink" title="&#x4E8C;&#x5206;&#x67E5;&#x627E;"></a>&#x4E8C;&#x5206;&#x67E5;&#x627E;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-number">1.4.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -475,6 +475,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -507,19 +511,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xargs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,11 +531,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">

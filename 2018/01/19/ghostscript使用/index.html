@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://blog.maweizhuo.com">
-  <title>Tag: hexo | maweizhuo blog 马伟倬 博客</title>
+  <title>ghostscript使用 | maweizhuo blog 马伟倬 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
-<meta name="keywords" content="后端,php,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,个人原创,坚持原创">
-<meta property="og:type" content="website">
-<meta property="og:title" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:url" content="http://blog.maweizhuo.com/tags/hexo/index.html">
+  <meta name="description" content="前言   最近和同事看问题的时候发现个问题,ghostscript(即gs命令)之前没听过,   网上文档不多,亲测了几个可用的记录下 系统环境   Linux 问题情况">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ghostscript使用">
+<meta property="og:url" content="http://blog.maweizhuo.com/2018/01/19/ghostscript使用/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
+<meta property="og:description" content="前言   最近和同事看问题的时候发现个问题,ghostscript(即gs命令)之前没听过,   网上文档不多,亲测了几个可用的记录下 系统环境   Linux 问题情况">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-19T09:05:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maweizhuo blog 马伟倬 博客">
-<meta name="twitter:description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
+<meta name="twitter:title" content="ghostscript使用">
+<meta name="twitter:description" content="前言   最近和同事看问题的时候发现个问题,ghostscript(即gs命令)之前没听过,   网上文档不多,亲测了几个可用的记录下 系统环境   Linux 问题情况">
   
     <link rel="alternative" href="/atom.xml" title="maweizhuo blog 马伟倬 博客" type="application/atom+xml">
   
@@ -152,52 +153,93 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ghostscript使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ghostscript使用
+    </h1>
+  
+
+        
+        <a href="/2018/01/19/ghostscript使用/" class="archive-article-date">
+  	<time datetime="2018-01-19T07:51:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>   最近和同事看问题的时候发现个问题,<code>ghostscript(即gs命令)</code>之前没听过,<br>   网上文档不多,亲测了几个可用的记录下</p>
+<h1 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h1><p>   Linux</p>
+<h1 id="问题情况"><a href="#问题情况" class="headerlink" title="问题情况"></a>问题情况</h1><a id="more"></a>
+<p>执行将PDF切分成图片报错。<br>命令:<br>gs -dQUIET -dNOSAFER -r300 -dBATCH -sDEVICE=pngalpha -dNOPAUSE<br>-dNOPROMPT -sOutputFile=/home/maweizhuo/testPng/%d.png -f /home/maweizhuo/pdf/test1.pdf<br>报错<strong>GPL Ghostscript 8.70: Unrecoverable error, exit code 1</strong></p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>网上查报错,查半天没定位到问题,<br>后来想可能是配置文件设置的文件大小的问题,这个文件2M,之前使用的都是几百K的。<br>但后来这个猜想打破了,一是没找到配置文件,二是8兆的文件解析都没问题。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>目前只使用了两个功能<br>一个pdf分隔成图片;一个多PDF合并成一个PDF</p>
+<h3 id="pdf分隔成图片"><a href="#pdf分隔成图片" class="headerlink" title="pdf分隔成图片"></a>pdf分隔成图片</h3><ul>
+<li><p>命令: <strong>gs -dQUIET -dNOSAFER -r300 -dBATCH -sDEVICE=pngalpha -dNOPAUSE<br>  -dNOPROMPT -sOutputFile=/home/maweizhuo/testPng/%d.png -f /home/maweizhuo/pdf/test1.pdf</strong></p>
+</li>
+<li><p>参数详解:<br>  “-dQUIET”,    安静的意思，指代执行过程中尽可能少的输出日志等信息。（也可以简写为“-q”）<br>  “-dNOSAFER”,    通过命令行运行<br>  “-dBATCH”,    执行到最后一页后退出<br>  “-dNOPAUSE”,    每一页转换之间没有停顿<br>  “-dNOPROMPT”,    没有相关提示<br>  “-dFirstPage=1”,    从第几页开始<br>  “-dLastPage=5”,     到第几页结束<br>  “-sDEVICE=pngalpha”,    转换输出的文件类型装置，默认值为x11alpha<br>  “-g720x1280”,    图片像素(-g<width>x<height>)，一般不指定，使用默认输出<br>  “-r300”,    图片分辨率（即图片解析度为300dpi），默认值好像是72(未测试证实)<br>  “-sOutputFile=/opt/shanhy/error1png/%d.png”,    图片输出路径，使用%d或%ld输出页数</height></width></p>
+</li>
+</ul>
+<h3 id="多PDF合并成一个PDF"><a href="#多PDF合并成一个PDF" class="headerlink" title="多PDF合并成一个PDF"></a>多PDF合并成一个PDF</h3><p>   gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=/home/maweizhuo/testPng/output.pdf<br>   -dBATCH /home/maweizhuo/pdf/test1.pdf /home/maweizhuo/pdf/test3.pdf</p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><blockquote>
+<p>记录点滴，成为更好的自己。       — weizhuo.ma</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/28/hexo支持emoji表情/" class="archive-article-date">
-  	<time datetime="2017-11-28T07:16:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/28/hexo支持emoji表情/">hexo支持emoji表情</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">emoji</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -210,123 +252,127 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://blog.maweizhuo.com/2018/01/19/ghostscript使用/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/09/hexo-插件百度提交收录/" class="archive-article-date">
-  	<time datetime="2017-06-09T08:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/17/laravel深入-IOC容器、中间件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">laravel深入-IOC容器、中间件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/09/hexo-插件百度提交收录/">hexo 插件实现链接被百度提交收录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">百度收录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统环境"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x7CFB;&#x7EDF;&#x73AF;&#x5883;" class="headerlink" title="&#x7CFB;&#x7EDF;&#x73AF;&#x5883;"></a>&#x7CFB;&#x7EDF;&#x73AF;&#x5883;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题情况"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x95EE;&#x9898;&#x60C5;&#x51B5;" class="headerlink" title="&#x95EE;&#x9898;&#x60C5;&#x51B5;"></a>&#x95EE;&#x9898;&#x60C5;&#x51B5;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题分析"><span class="toc-number">3.1.</span> <span class="toc-text"><a href="#&#x95EE;&#x9898;&#x5206;&#x6790;" class="headerlink" title="&#x95EE;&#x9898;&#x5206;&#x6790;"></a>&#x95EE;&#x9898;&#x5206;&#x6790;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">3.2.</span> <span class="toc-text"><a href="#&#x4F7F;&#x7528;" class="headerlink" title="&#x4F7F;&#x7528;"></a>&#x4F7F;&#x7528;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pdf分隔成图片"><span class="toc-number">3.2.1.</span> <span class="toc-text"><a href="#pdf&#x5206;&#x9694;&#x6210;&#x56FE;&#x7247;" class="headerlink" title="pdf&#x5206;&#x9694;&#x6210;&#x56FE;&#x7247;"></a>pdf&#x5206;&#x9694;&#x6210;&#x56FE;&#x7247;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多PDF合并成一个PDF"><span class="toc-number">3.2.2.</span> <span class="toc-text"><a href="#&#x591A;PDF&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;PDF" class="headerlink" title="&#x591A;PDF&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;PDF"></a>&#x591A;PDF&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;PDF</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引用"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/26/markdown使用/" class="archive-article-date">
-  	<time datetime="2017-05-26T03:40:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/26/markdown使用/">markdown 笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="ghostscript使用" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytcxc9Qr",
+        conf: "7ce0fa93ee94266dc6d07dfdad088f89"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -356,9 +402,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
