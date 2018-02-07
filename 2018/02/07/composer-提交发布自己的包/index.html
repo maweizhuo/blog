@@ -6,19 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://blog.maweizhuo.com">
-  <title>Tag: hexo | maweizhuo blog 马伟倬 博客</title>
+  <title>composer-提交发布自己的包 | maweizhuo blog 马伟倬 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
-<meta name="keywords" content="后端,php,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,个人原创,坚持原创">
-<meta property="og:type" content="website">
-<meta property="og:title" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:url" content="http://blog.maweizhuo.com/tags/hexo/index.html">
+  <meta name="description" content="前言 composer是php现在最流行管理依赖(dependency)关系的工具。 在框架中我们总是引入其他人的包,我们自己可不可以提交自己的包呢? 当你要使用别人写的开源项目时,通常我们会到https://packagist.org 上面去找包名,版本。这个网站上面的这些php包是怎么来的呢?写好的代码如何发布到这个网站上去的呢？ 原理 包的作者把自己的代码加上composer.json文件，">
+<meta name="keywords" content="php,composer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="composer-提交发布自己的包">
+<meta property="og:url" content="http://blog.maweizhuo.com/2018/02/07/composer-提交发布自己的包/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
+<meta property="og:description" content="前言 composer是php现在最流行管理依赖(dependency)关系的工具。 在框架中我们总是引入其他人的包,我们自己可不可以提交自己的包呢? 当你要使用别人写的开源项目时,通常我们会到https://packagist.org 上面去找包名,版本。这个网站上面的这些php包是怎么来的呢?写好的代码如何发布到这个网站上去的呢？ 原理 包的作者把自己的代码加上composer.json文件，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://maweizhuo.github.io/pic/blog/20180207-002.png">
+<meta property="og:image" content="https://maweizhuo.github.io/pic/blog/20180207-001.png">
+<meta property="og:image" content="https://maweizhuo.github.io/pic/blog/20180207-004.png">
+<meta property="og:image" content="https://maweizhuo.github.io/pic/blog/20180207-005.png">
+<meta property="og:updated_time" content="2018-02-07T06:45:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maweizhuo blog 马伟倬 博客">
-<meta name="twitter:description" content="分享个人体会,个人原创,坚持原创,将工作生活遇到的事情写入到博客上，提醒自己，主要涉猎于网站后台开发，PHP+ Nginx 及个人感悟。与大家共勉 --马伟倬个人博客">
+<meta name="twitter:title" content="composer-提交发布自己的包">
+<meta name="twitter:description" content="前言 composer是php现在最流行管理依赖(dependency)关系的工具。 在框架中我们总是引入其他人的包,我们自己可不可以提交自己的包呢? 当你要使用别人写的开源项目时,通常我们会到https://packagist.org 上面去找包名,版本。这个网站上面的这些php包是怎么来的呢?写好的代码如何发布到这个网站上去的呢？ 原理 包的作者把自己的代码加上composer.json文件，">
+<meta name="twitter:image" content="https://maweizhuo.github.io/pic/blog/20180207-002.png">
   
     <link rel="alternative" href="/atom.xml" title="maweizhuo blog 马伟倬 博客" type="application/atom+xml">
   
@@ -152,52 +158,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-composer-提交发布自己的包" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      composer-提交发布自己的包
+    </h1>
+  
+
+        
+        <a href="/2018/02/07/composer-提交发布自己的包/" class="archive-article-date">
+  	<time datetime="2018-02-07T06:28:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-07</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> <code>composer是php现在最流行管理依赖(dependency)关系的工具。</code><br> 在框架中我们总是引入其他人的包,我们自己可不可以提交自己的包呢?<br> 当你要使用别人写的开源项目时,通常我们会到<a href="https://packagist.org" target="_blank" rel="noopener">https://packagist.org</a> 上面去找包名,版本。<br><strong>这个网站上面的这些php包是怎么来的呢?写好的代码如何发布到这个网站上去的呢？</strong></p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p> 包的作者把自己的代码加上composer.json文件，上传到github.com,<br> 再把github链接提交到<a href="https://packagist.org" target="_blank" rel="noopener">https://packagist.org</a> 网站上面，<br> 这样包的使用者就可以在composer里面使用了。</p>
+<a id="more"></a>
+<h2 id="gitHub操作"><a href="#gitHub操作" class="headerlink" title="gitHub操作"></a>gitHub操作</h2><p>作为一个开发,账号应该都有吧,跳过登录注册等相关简易操作。</p>
+<h3 id="建立仓库"><a href="#建立仓库" class="headerlink" title="建立仓库"></a>建立仓库</h3><h3 id="编写项目"><a href="#编写项目" class="headerlink" title="编写项目"></a>编写项目</h3><h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><p><img src="https://maweizhuo.github.io/pic/blog/20180207-002.png" alt="目录结构"></p>
+<h4 id="composer-json"><a href="#composer-json" class="headerlink" title="composer.json"></a>composer.json</h4><ul>
+<li><p><strong>直接编写</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span>: <span class="string">"maweizhuo/test-cmp"</span>,</div><div class="line">    <span class="string">"description"</span>: <span class="string">"test composer use"</span>,</div><div class="line">    <span class="string">"type"</span>: <span class="string">"library"</span>,</div><div class="line">    <span class="string">"license"</span>: <span class="string">"MIT"</span>,</div><div class="line">    <span class="string">"authors"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="string">"name"</span>: <span class="string">"weizhuo.ma"</span>,</div><div class="line">            <span class="string">"email"</span>: <span class="string">"maweizhuo1314@163.com"</span></div><div class="line">        &#125;</div><div class="line">    ],</div><div class="line">    <span class="string">"minimum-stability"</span>: <span class="string">"dev"</span>,</div><div class="line">    <span class="string">"require"</span>: &#123;</div><div class="line">        <span class="string">"php"</span>: <span class="string">"&gt;=5.6.0"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="string">"autoload"</span>: &#123;</div><div class="line">        <span class="string">"psr-4"</span>: &#123;</div><div class="line">            <span class="string">"TestCmp\\"</span>: <span class="string">"src/"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>命令初始化</strong><br><code>composer init</code> 按照步骤输入<br><img src="https://maweizhuo.github.io/pic/blog/20180207-001.png" alt="初始化composer"></p>
+</li>
+</ul>
+<h4 id="Test-php"><a href="#Test-php" class="headerlink" title="Test.php"></a>Test.php</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by PhpStorm.</div><div class="line"> * User: maweizhuo</div><div class="line"> * Date: 2018/2/5</div><div class="line"> * Time: 下午5:39</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">TestCmp</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">printHello</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"hello world"</span>;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="readme-md"><a href="#readme-md" class="headerlink" title="readme.md"></a>readme.md</h4><p>准备工作基本完成。</p>
+<h2 id="composer-官网操作"><a href="#composer-官网操作" class="headerlink" title="composer 官网操作"></a>composer 官网操作</h2><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><h3 id="submit"><a href="#submit" class="headerlink" title="submit"></a>submit</h3><p> <a href="https://packagist.org/packages/submit" target="_blank" rel="noopener">submit </a><br> 点击check , 没问题之后确认操作<br> 就已经可以使用composer命令下载了,<br> 做下<code>自动同步GitHub</code>,绑定webhook</p>
+<h3 id="自动同步"><a href="#自动同步" class="headerlink" title="自动同步"></a>自动同步</h3><p><img src="https://maweizhuo.github.io/pic/blog/20180207-004.png" alt="auto sync"></p>
+<h3 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h3><p>发布稳定版本的时候,打个tag版本会更好。</p>
+<p><strong>添加服务 -&gt; Packagist -&gt; 填写name -&gt; token (Packagist 里可以看到) -&gt; host (可不填)</strong></p>
+<ul>
+<li>Enter the username (<strong>not</strong> email) who the API token belongs to (defaults to the repository owner)</li>
+<li>Enter the host of your Packagist installation<br> (defaults to <a href="https://packagist.org" target="_blank" rel="noopener">https://packagist.org</a>), the protocol-prefix is optional and defaults to “http://“.</li>
+</ul>
+<p>发布同步工作也已完成</p>
+<h2 id="使用composer包"><a href="#使用composer包" class="headerlink" title="使用composer包"></a>使用composer包</h2><h3 id="新建composer-json"><a href="#新建composer-json" class="headerlink" title="新建composer.json"></a>新建composer.json</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"repositories"</span>: &#123;</div><div class="line">        <span class="string">"packagist"</span>: &#123;</div><div class="line">            <span class="string">"type"</span>: <span class="string">"composer"</span>,</div><div class="line">            <span class="string">"url"</span>: <span class="string">"https://packagist.phpcomposer.com"</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="string">"require"</span>: &#123;</div><div class="line">        <span class="string">"php"</span>: <span class="string">"&gt;=5.6.0"</span>,</div><div class="line">        <span class="string">"maweizhuo/test-cmp"</span>: <span class="string">"1.*"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="新建test-php"><a href="#新建test-php" class="headerlink" title="新建test.php"></a>新建test.php</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">include</span> <span class="string">'vendor/autoload.php'</span>;</div><div class="line"><span class="keyword">use</span> \<span class="title">TestCmp</span>\<span class="title">Test</span>;</div><div class="line">$test = <span class="keyword">new</span> Test();</div><div class="line">$test-&gt;printHello();</div></pre></td></tr></table></figure>
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><p><code>composer install</code></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="https://maweizhuo.github.io/pic/blog/20180207-005.png" alt="效果"></p>
+<p>至此。一个自己的包就完成了。其中还有一些细节没有具体操作讲解。<br>比如composer.json 里其他参数都有什么作用。。。以后慢慢研究</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
+<p>记录点滴，成为更好的自己。       — weizhuo.ma</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/28/hexo支持emoji表情/" class="archive-article-date">
-  	<time datetime="2017-11-28T07:16:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/28/hexo支持emoji表情/">hexo支持emoji表情</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">emoji</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">composer</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -210,123 +276,127 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://blog.maweizhuo.com/2018/02/07/composer-提交发布自己的包/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/09/hexo-插件百度提交收录/" class="archive-article-date">
-  	<time datetime="2017-06-09T08:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/02/laravel-exel导入导出/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">laravel-excel导入导出</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/09/hexo-插件百度提交收录/">hexo 插件实现链接被百度提交收录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">百度收录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x539F;&#x7406;" class="headerlink" title="&#x539F;&#x7406;"></a>&#x539F;&#x7406;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitHub操作"><span class="toc-number">3.</span> <span class="toc-text"><a href="#gitHub&#x64CD;&#x4F5C;" class="headerlink" title="gitHub&#x64CD;&#x4F5C;"></a>gitHub&#x64CD;&#x4F5C;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#建立仓库"><span class="toc-number">3.1.</span> <span class="toc-text"><a href="#&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;" class="headerlink" title="&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;"></a>&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写项目"><span class="toc-number">3.2.</span> <span class="toc-text"><a href="#&#x7F16;&#x5199;&#x9879;&#x76EE;" class="headerlink" title="&#x7F16;&#x5199;&#x9879;&#x76EE;"></a>&#x7F16;&#x5199;&#x9879;&#x76EE;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目录结构"><span class="toc-number">3.2.1.</span> <span class="toc-text"><a href="#&#x76EE;&#x5F55;&#x7ED3;&#x6784;" class="headerlink" title="&#x76EE;&#x5F55;&#x7ED3;&#x6784;"></a>&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#composer-json"><span class="toc-number">3.2.2.</span> <span class="toc-text"><a href="#composer-json" class="headerlink" title="composer.json"></a>composer.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Test-php"><span class="toc-number">3.2.3.</span> <span class="toc-text"><a href="#Test-php" class="headerlink" title="Test.php"></a>Test.php</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#readme-md"><span class="toc-number">3.2.4.</span> <span class="toc-text"><a href="#readme-md" class="headerlink" title="readme.md"></a>readme.md</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#composer-官网操作"><span class="toc-number">4.</span> <span class="toc-text"><a href="#composer-&#x5B98;&#x7F51;&#x64CD;&#x4F5C;" class="headerlink" title="composer &#x5B98;&#x7F51;&#x64CD;&#x4F5C;"></a>composer &#x5B98;&#x7F51;&#x64CD;&#x4F5C;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登录"><span class="toc-number">4.1.</span> <span class="toc-text"><a href="#&#x767B;&#x5F55;" class="headerlink" title="&#x767B;&#x5F55;"></a>&#x767B;&#x5F55;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#submit"><span class="toc-number">4.2.</span> <span class="toc-text"><a href="#submit" class="headerlink" title="submit"></a>submit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动同步"><span class="toc-number">4.3.</span> <span class="toc-text"><a href="#&#x81EA;&#x52A8;&#x540C;&#x6B65;" class="headerlink" title="&#x81EA;&#x52A8;&#x540C;&#x6B65;"></a>&#x81EA;&#x52A8;&#x540C;&#x6B65;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交代码"><span class="toc-number">4.4.</span> <span class="toc-text"><a href="#&#x63D0;&#x4EA4;&#x4EE3;&#x7801;" class="headerlink" title="&#x63D0;&#x4EA4;&#x4EE3;&#x7801;"></a>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用composer包"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x4F7F;&#x7528;composer&#x5305;" class="headerlink" title="&#x4F7F;&#x7528;composer&#x5305;"></a>&#x4F7F;&#x7528;composer&#x5305;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建composer-json"><span class="toc-number">5.1.</span> <span class="toc-text"><a href="#&#x65B0;&#x5EFA;composer-json" class="headerlink" title="&#x65B0;&#x5EFA;composer.json"></a>&#x65B0;&#x5EFA;composer.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建test-php"><span class="toc-number">5.2.</span> <span class="toc-text"><a href="#&#x65B0;&#x5EFA;test-php" class="headerlink" title="&#x65B0;&#x5EFA;test.php"></a>&#x65B0;&#x5EFA;test.php</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装包"><span class="toc-number">5.3.</span> <span class="toc-text"><a href="#&#x5B89;&#x88C5;&#x5305;" class="headerlink" title="&#x5B89;&#x88C5;&#x5305;"></a>&#x5B89;&#x88C5;&#x5305;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图"><span class="toc-number">5.4.</span> <span class="toc-text"><a href="#&#x6548;&#x679C;&#x56FE;" class="headerlink" title="&#x6548;&#x679C;&#x56FE;"></a>&#x6548;&#x679C;&#x56FE;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/26/markdown使用/" class="archive-article-date">
-  	<time datetime="2017-05-26T03:40:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/26/markdown使用/">markdown 笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="composer-提交发布自己的包" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytcxc9Qr",
+        conf: "7ce0fa93ee94266dc6d07dfdad088f89"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -356,9 +426,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
