@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://maweizhuo.github.io/pic/blog/20180207-004.png">
 <meta property="og:image" content="https://maweizhuo.github.io/pic/blog/20180207-003.png">
 <meta property="og:image" content="https://maweizhuo.github.io/pic/blog/20180207-005.png">
-<meta property="og:updated_time" content="2018-02-07T09:51:31.000Z">
+<meta property="og:updated_time" content="2018-02-07T09:53:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="composer-提交发布自己的包">
 <meta name="twitter:description" content="前言 composer是php现在最流行管理依赖(dependency)关系的工具。 在框架中我们总是引入其他人的包,我们自己可不可以提交自己的包呢? 当你要使用别人写的开源项目时,通常我们会到https://packagist.org 上面去找包名,版本。这个网站上面的这些php包是怎么来的呢?写好的代码如何发布到这个网站上去的呢？ 原理 包的作者把自己的代码加上composer.json文件，">
@@ -193,7 +193,7 @@
 </ul>
 <h4 id="Test-php"><a href="#Test-php" class="headerlink" title="Test.php"></a>Test.php</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by PhpStorm.</div><div class="line"> * User: maweizhuo</div><div class="line"> * Date: 2018/2/5</div><div class="line"> * Time: 下午5:39</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">TestCmp</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">printHello</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"hello world"</span>;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="readme-md"><a href="#readme-md" class="headerlink" title="readme.md"></a>readme.md</h4><p>准备工作基本完成。</p>
-<h2 id="composer-官网操作"><a href="#composer-官网操作" class="headerlink" title="composer 官网操作"></a>composer 官网操作</h2><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><h3 id="submit"><a href="#submit" class="headerlink" title="submit"></a>submit</h3><p> <a href="https://packagist.org/packages/submit" target="_blank" rel="noopener">submit </a><br> 点击check , 没问题之后确认操作<br> 就已经可以使用composer命令下载了,<br> 做下<code>自动同步GitHub</code>,绑定webhook</p>
+<h2 id="composer-官网操作"><a href="#composer-官网操作" class="headerlink" title="composer 官网操作"></a>composer 官网操作</h2><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><h3 id="包地址submit"><a href="#包地址submit" class="headerlink" title="包地址submit"></a>包地址submit</h3><p> <a href="https://packagist.org/packages/submit" target="_blank" rel="noopener">submit </a><br> 点击check , 没问题之后确认操作<br> 就已经可以使用composer命令下载了,<br> 做下<code>自动同步GitHub</code>,绑定webhook</p>
 <h3 id="自动同步"><a href="#自动同步" class="headerlink" title="自动同步"></a>自动同步</h3><p><img src="https://maweizhuo.github.io/pic/blog/20180207-004.png" alt="auto sync"></p>
 <h3 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h3><p>发布稳定版本的时候,打个tag版本会更好。</p>
 <p><strong>添加服务 -&gt; Packagist -&gt; 填写name -&gt; token (Packagist 里可以看到) -&gt; host (可不填)</strong></p>
@@ -368,7 +368,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x539F;&#x7406;" class="headerlink" title="&#x539F;&#x7406;"></a>&#x539F;&#x7406;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitHub操作"><span class="toc-number">3.</span> <span class="toc-text"><a href="#gitHub&#x64CD;&#x4F5C;" class="headerlink" title="gitHub&#x64CD;&#x4F5C;"></a>gitHub&#x64CD;&#x4F5C;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#建立仓库"><span class="toc-number">3.1.</span> <span class="toc-text"><a href="#&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;" class="headerlink" title="&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;"></a>&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写项目"><span class="toc-number">3.2.</span> <span class="toc-text"><a href="#&#x7F16;&#x5199;&#x9879;&#x76EE;" class="headerlink" title="&#x7F16;&#x5199;&#x9879;&#x76EE;"></a>&#x7F16;&#x5199;&#x9879;&#x76EE;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目录结构"><span class="toc-number">3.2.1.</span> <span class="toc-text"><a href="#&#x76EE;&#x5F55;&#x7ED3;&#x6784;" class="headerlink" title="&#x76EE;&#x5F55;&#x7ED3;&#x6784;"></a>&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#composer-json"><span class="toc-number">3.2.2.</span> <span class="toc-text"><a href="#composer-json" class="headerlink" title="composer.json"></a>composer.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Test-php"><span class="toc-number">3.2.3.</span> <span class="toc-text"><a href="#Test-php" class="headerlink" title="Test.php"></a>Test.php</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#readme-md"><span class="toc-number">3.2.4.</span> <span class="toc-text"><a href="#readme-md" class="headerlink" title="readme.md"></a>readme.md</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#composer-官网操作"><span class="toc-number">4.</span> <span class="toc-text"><a href="#composer-&#x5B98;&#x7F51;&#x64CD;&#x4F5C;" class="headerlink" title="composer &#x5B98;&#x7F51;&#x64CD;&#x4F5C;"></a>composer &#x5B98;&#x7F51;&#x64CD;&#x4F5C;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登录"><span class="toc-number">4.1.</span> <span class="toc-text"><a href="#&#x767B;&#x5F55;" class="headerlink" title="&#x767B;&#x5F55;"></a>&#x767B;&#x5F55;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#submit"><span class="toc-number">4.2.</span> <span class="toc-text"><a href="#submit" class="headerlink" title="submit"></a>submit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动同步"><span class="toc-number">4.3.</span> <span class="toc-text"><a href="#&#x81EA;&#x52A8;&#x540C;&#x6B65;" class="headerlink" title="&#x81EA;&#x52A8;&#x540C;&#x6B65;"></a>&#x81EA;&#x52A8;&#x540C;&#x6B65;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交代码"><span class="toc-number">4.4.</span> <span class="toc-text"><a href="#&#x63D0;&#x4EA4;&#x4EE3;&#x7801;" class="headerlink" title="&#x63D0;&#x4EA4;&#x4EE3;&#x7801;"></a>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终展现"><span class="toc-number">4.5.</span> <span class="toc-text"><a href="#&#x6700;&#x7EC8;&#x5C55;&#x73B0;" class="headerlink" title="&#x6700;&#x7EC8;&#x5C55;&#x73B0;"></a>&#x6700;&#x7EC8;&#x5C55;&#x73B0;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用composer包"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x4F7F;&#x7528;composer&#x5305;" class="headerlink" title="&#x4F7F;&#x7528;composer&#x5305;"></a>&#x4F7F;&#x7528;composer&#x5305;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建composer-json"><span class="toc-number">5.1.</span> <span class="toc-text"><a href="#&#x65B0;&#x5EFA;composer-json" class="headerlink" title="&#x65B0;&#x5EFA;composer.json"></a>&#x65B0;&#x5EFA;composer.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建test-php"><span class="toc-number">5.2.</span> <span class="toc-text"><a href="#&#x65B0;&#x5EFA;test-php" class="headerlink" title="&#x65B0;&#x5EFA;test.php"></a>&#x65B0;&#x5EFA;test.php</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装包"><span class="toc-number">5.3.</span> <span class="toc-text"><a href="#&#x5B89;&#x88C5;&#x5305;" class="headerlink" title="&#x5B89;&#x88C5;&#x5305;"></a>&#x5B89;&#x88C5;&#x5305;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图"><span class="toc-number">5.4.</span> <span class="toc-text"><a href="#&#x6548;&#x679C;&#x56FE;" class="headerlink" title="&#x6548;&#x679C;&#x56FE;"></a>&#x6548;&#x679C;&#x56FE;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x539F;&#x7406;" class="headerlink" title="&#x539F;&#x7406;"></a>&#x539F;&#x7406;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitHub操作"><span class="toc-number">3.</span> <span class="toc-text"><a href="#gitHub&#x64CD;&#x4F5C;" class="headerlink" title="gitHub&#x64CD;&#x4F5C;"></a>gitHub&#x64CD;&#x4F5C;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#建立仓库"><span class="toc-number">3.1.</span> <span class="toc-text"><a href="#&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;" class="headerlink" title="&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;"></a>&#x5EFA;&#x7ACB;&#x4ED3;&#x5E93;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写项目"><span class="toc-number">3.2.</span> <span class="toc-text"><a href="#&#x7F16;&#x5199;&#x9879;&#x76EE;" class="headerlink" title="&#x7F16;&#x5199;&#x9879;&#x76EE;"></a>&#x7F16;&#x5199;&#x9879;&#x76EE;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#目录结构"><span class="toc-number">3.2.1.</span> <span class="toc-text"><a href="#&#x76EE;&#x5F55;&#x7ED3;&#x6784;" class="headerlink" title="&#x76EE;&#x5F55;&#x7ED3;&#x6784;"></a>&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#composer-json"><span class="toc-number">3.2.2.</span> <span class="toc-text"><a href="#composer-json" class="headerlink" title="composer.json"></a>composer.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Test-php"><span class="toc-number">3.2.3.</span> <span class="toc-text"><a href="#Test-php" class="headerlink" title="Test.php"></a>Test.php</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#readme-md"><span class="toc-number">3.2.4.</span> <span class="toc-text"><a href="#readme-md" class="headerlink" title="readme.md"></a>readme.md</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#composer-官网操作"><span class="toc-number">4.</span> <span class="toc-text"><a href="#composer-&#x5B98;&#x7F51;&#x64CD;&#x4F5C;" class="headerlink" title="composer &#x5B98;&#x7F51;&#x64CD;&#x4F5C;"></a>composer &#x5B98;&#x7F51;&#x64CD;&#x4F5C;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登录"><span class="toc-number">4.1.</span> <span class="toc-text"><a href="#&#x767B;&#x5F55;" class="headerlink" title="&#x767B;&#x5F55;"></a>&#x767B;&#x5F55;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包地址submit"><span class="toc-number">4.2.</span> <span class="toc-text"><a href="#&#x5305;&#x5730;&#x5740;submit" class="headerlink" title="&#x5305;&#x5730;&#x5740;submit"></a>&#x5305;&#x5730;&#x5740;submit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动同步"><span class="toc-number">4.3.</span> <span class="toc-text"><a href="#&#x81EA;&#x52A8;&#x540C;&#x6B65;" class="headerlink" title="&#x81EA;&#x52A8;&#x540C;&#x6B65;"></a>&#x81EA;&#x52A8;&#x540C;&#x6B65;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交代码"><span class="toc-number">4.4.</span> <span class="toc-text"><a href="#&#x63D0;&#x4EA4;&#x4EE3;&#x7801;" class="headerlink" title="&#x63D0;&#x4EA4;&#x4EE3;&#x7801;"></a>&#x63D0;&#x4EA4;&#x4EE3;&#x7801;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终展现"><span class="toc-number">4.5.</span> <span class="toc-text"><a href="#&#x6700;&#x7EC8;&#x5C55;&#x73B0;" class="headerlink" title="&#x6700;&#x7EC8;&#x5C55;&#x73B0;"></a>&#x6700;&#x7EC8;&#x5C55;&#x73B0;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用composer包"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x4F7F;&#x7528;composer&#x5305;" class="headerlink" title="&#x4F7F;&#x7528;composer&#x5305;"></a>&#x4F7F;&#x7528;composer&#x5305;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建composer-json"><span class="toc-number">5.1.</span> <span class="toc-text"><a href="#&#x65B0;&#x5EFA;composer-json" class="headerlink" title="&#x65B0;&#x5EFA;composer.json"></a>&#x65B0;&#x5EFA;composer.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建test-php"><span class="toc-number">5.2.</span> <span class="toc-text"><a href="#&#x65B0;&#x5EFA;test-php" class="headerlink" title="&#x65B0;&#x5EFA;test.php"></a>&#x65B0;&#x5EFA;test.php</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装包"><span class="toc-number">5.3.</span> <span class="toc-text"><a href="#&#x5B89;&#x88C5;&#x5305;" class="headerlink" title="&#x5B89;&#x88C5;&#x5305;"></a>&#x5B89;&#x88C5;&#x5305;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图"><span class="toc-number">5.4.</span> <span class="toc-text"><a href="#&#x6548;&#x679C;&#x56FE;" class="headerlink" title="&#x6548;&#x679C;&#x56FE;"></a>&#x6548;&#x679C;&#x56FE;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x5F15;&#x7528;" class="headerlink" title="&#x5F15;&#x7528;"></a>&#x5F15;&#x7528;</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -493,7 +493,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">composer</a>
+                <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,11 +505,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">composer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,15 +517,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,19 +525,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">xargs</a>
+                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,6 +546,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">xargs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">

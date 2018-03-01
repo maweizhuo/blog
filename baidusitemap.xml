@@ -4,16 +4,18 @@
 
     
   <url>
-    <loc>http://blog.maweizhuo.com/2018/02/07/composer-%E6%8F%90%E4%BA%A4%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8C%85/</loc>
-    <lastmod>2018-02-07T09:51:31.000Z</lastmod>
+    <loc>http://blog.maweizhuo.com/2018/02/02/laravel-exel%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</loc>
+    <lastmod>2018-03-01T09:11:24.000Z</lastmod>
     <data>
         <display>
-        <title>composer-提交发布自己的包</title>
-        <pubTime>2018-02-07T06:28:23.000Z</pubTime>
+        <title>laravel-excel导入导出</title>
+        <pubTime>2018-02-02T08:28:23.000Z</pubTime>
         
         <tag>php</tag>
          
-        <tag>composer</tag>
+        <tag>laravel</tag>
+         
+        <tag>excel</tag>
          
          
            
@@ -26,18 +28,16 @@
 
     
   <url>
-    <loc>http://blog.maweizhuo.com/2018/02/02/laravel-exel%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</loc>
-    <lastmod>2018-02-02T02:47:46.000Z</lastmod>
+    <loc>http://blog.maweizhuo.com/2018/02/07/composer-%E6%8F%90%E4%BA%A4%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8C%85/</loc>
+    <lastmod>2018-02-07T09:53:13.000Z</lastmod>
     <data>
         <display>
-        <title>laravel-excel导入导出</title>
-        <pubTime>2018-02-02T08:28:23.000Z</pubTime>
+        <title>composer-提交发布自己的包</title>
+        <pubTime>2018-02-07T06:28:23.000Z</pubTime>
         
         <tag>php</tag>
          
-        <tag>laravel</tag>
-         
-        <tag>excel</tag>
+        <tag>composer</tag>
          
          
            

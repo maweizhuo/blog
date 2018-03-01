@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
 <meta property="og:description" content="前言 项目中经常遇到导入/导出 excel,csv等文件。  使用两次后，把导入、导出操作流程记录如下： 安装 1234567891011121314composer require maatwebsite/excel ~2.0.0安装后的设置在config/app.php中注册服务提供者到providers数组：Maatwebsite\Excel\ExcelServiceProvider::cl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-02T02:47:46.000Z">
+<meta property="og:updated_time" content="2018-03-01T09:11:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel-excel导入导出">
 <meta name="twitter:description" content="前言 项目中经常遇到导入/导出 excel,csv等文件。  使用两次后，把导入、导出操作流程记录如下： 安装 1234567891011121314composer require maatwebsite/excel ~2.0.0安装后的设置在config/app.php中注册服务提供者到providers数组：Maatwebsite\Excel\ExcelServiceProvider::cl">
@@ -177,7 +177,7 @@
 <p> 使用两次后，把导入、导出操作流程记录如下：</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2> <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">composer <span class="keyword">require</span> maatwebsite/excel ~<span class="number">2.0</span><span class="number">.0</span></div><div class="line"></div><div class="line">安装后的设置</div><div class="line"></div><div class="line">在config/app.php中注册服务提供者到providers数组：</div><div class="line"></div><div class="line">Maatwebsite\Excel\ExcelServiceProvider::class,</div><div class="line">同样在config/app.php中注册门面到aliases数组：</div><div class="line"></div><div class="line"><span class="string">'Excel'</span> =&gt; Maatwebsite\Excel\Facades\Excel::class,</div><div class="line">如果想要对Laravel Excel进行更多的自定义配置，执行如下Artisan命令：</div><div class="line"></div><div class="line">php artisan vendor:publish</div><div class="line">执行成功后会在config目录下生成一个配置文件excel.php。</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p><code>导出的结果数字的话可能是浮点型</code>,如你文件里11,但是打印会发现是11.0,<strong>需要注意下</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * 导入csv 数据</div><div class="line">     * <span class="doctag">@param</span> $files</div><div class="line">     * <span class="doctag">@return</span> array</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">importExcel</span><span class="params">($files)</span></span></div><div class="line">    &#123;</div><div class="line">        $res = [];</div><div class="line">        Excel::load($files, <span class="function"><span class="keyword">function</span> <span class="params">($reader)</span> <span class="title">use</span> <span class="params">(&amp;$res)</span> </span>&#123;</div><div class="line">            $reader = $reader-&gt;getSheet(<span class="number">0</span>);</div><div class="line">            $res = $reader-&gt;toArray();</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        <span class="keyword">return</span> $res;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p><code>导出的结果数字的话可能是浮点型</code>,如你文件里11,但是打印会发现是11.0,<strong>需要注意下</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * 导入csv 数据</div><div class="line">     * <span class="doctag">@param</span> $files</div><div class="line">     * <span class="doctag">@return</span> array</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">importExcel</span><span class="params">($files)</span></span></div><div class="line">    &#123;</div><div class="line">        $res = [];</div><div class="line">        Excel::load($files, <span class="function"><span class="keyword">function</span> <span class="params">($reader)</span> <span class="title">use</span> <span class="params">(&amp;$res)</span> </span>&#123;</div><div class="line">            $reader = $reader-&gt;getSheet(<span class="number">0</span>);</div><div class="line">            $res = $reader-&gt;toArray();</div><div class="line">        &#125;);</div><div class="line">         <span class="comment">// 过滤掉空的单元格</span></div><div class="line">        <span class="keyword">return</span> array_filter(array_map(<span class="string">'array_filter'</span>, $res));</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><p><code>store</code>保存到服务器 ,默认位置:storage/exports/<br><code>export</code>浏览器下载<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Excel::create(<span class="string">'标注完成的书本试卷'</span>,<span class="function"><span class="keyword">function</span><span class="params">($excel)</span> <span class="title">use</span> <span class="params">($new_data)</span></span>&#123;</div><div class="line">           $excel-&gt;sheet(<span class="string">'书本试卷'</span>, <span class="function"><span class="keyword">function</span><span class="params">($sheet)</span> <span class="title">use</span> <span class="params">($new_data)</span></span>&#123;</div><div class="line">               $sheet-&gt;rows($new_data);</div><div class="line">           &#125;);</div><div class="line"></div><div class="line"></div><div class="line">       &#125;)-&gt;store(<span class="string">'xlsx'</span>);</div></pre></td></tr></table></figure></p>
 <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
 <p>记录点滴，成为更好的自己。       — weizhuo.ma</p>
@@ -478,7 +478,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">composer</a>
+                <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,11 +490,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">composer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,15 +502,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,19 +510,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">xargs</a>
+                <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,6 +531,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xhgui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">xargs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
