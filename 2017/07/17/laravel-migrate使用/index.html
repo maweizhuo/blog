@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://blog.maweizhuo.com">
   <title>laravel migrate使用 | maweizhuo blog 马伟倬 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 laravel 框架中的 migrate 类似于 git ，数据库的历史版本查看工具, 之前建立表结构都是从数据表中新建，迁移不是太方便，而使用laravel artisan 命令工具 可以很好的解决这个问题。适合于多人协同工作时候，数据库的迁移。  使用两次后，把操作流程记录如下： 生成新表 12php artisan make:migration create_label_tabel -">
+  <meta name="description" content="前言 laravel 框架中的 migrate 类似于 git ，数据库的历史版本查看工具, 之前建立表结构都是从数据表中新建，迁移不是太方便，而使用laravel artisan 命令工具 可以很好的解决这个问题。适合于多人协同工作时候，数据库的迁移。  使用两次后，把操作流程记录如下： 生成新表 12php artisan make:migration create_label_table -">
 <meta name="keywords" content="php,laravel,migrate">
 <meta property="og:type" content="article">
 <meta property="og:title" content="laravel migrate使用">
 <meta property="og:url" content="http://blog.maweizhuo.com/2017/07/17/laravel-migrate使用/index.html">
 <meta property="og:site_name" content="maweizhuo blog 马伟倬 博客">
-<meta property="og:description" content="前言 laravel 框架中的 migrate 类似于 git ，数据库的历史版本查看工具, 之前建立表结构都是从数据表中新建，迁移不是太方便，而使用laravel artisan 命令工具 可以很好的解决这个问题。适合于多人协同工作时候，数据库的迁移。  使用两次后，把操作流程记录如下： 生成新表 12php artisan make:migration create_label_tabel -">
+<meta property="og:description" content="前言 laravel 框架中的 migrate 类似于 git ，数据库的历史版本查看工具, 之前建立表结构都是从数据表中新建，迁移不是太方便，而使用laravel artisan 命令工具 可以很好的解决这个问题。适合于多人协同工作时候，数据库的迁移。  使用两次后，把操作流程记录如下： 生成新表 12php artisan make:migration create_label_table -">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-19T09:09:00.000Z">
+<meta property="og:updated_time" content="2018-05-10T14:10:52.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="laravel migrate使用">
-<meta name="twitter:description" content="前言 laravel 框架中的 migrate 类似于 git ，数据库的历史版本查看工具, 之前建立表结构都是从数据表中新建，迁移不是太方便，而使用laravel artisan 命令工具 可以很好的解决这个问题。适合于多人协同工作时候，数据库的迁移。  使用两次后，把操作流程记录如下： 生成新表 12php artisan make:migration create_label_tabel -">
+<meta name="twitter:description" content="前言 laravel 框架中的 migrate 类似于 git ，数据库的历史版本查看工具, 之前建立表结构都是从数据表中新建，迁移不是太方便，而使用laravel artisan 命令工具 可以很好的解决这个问题。适合于多人协同工作时候，数据库的迁移。  使用两次后，把操作流程记录如下： 生成新表 12php artisan make:migration create_label_table -">
   
     <link rel="alternative" href="/atom.xml" title="maweizhuo blog 马伟倬 博客" type="application/atom+xml">
   
@@ -175,8 +175,8 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> laravel 框架中的 migrate 类似于 git ，数据库的历史版本查看工具,<br> 之前建立表结构都是从数据表中新建，迁移不是太方便，而使用laravel artisan 命令工具<br> 可以很好的解决这个问题。适合于多人协同工作时候，数据库的迁移。</p>
 <p> 使用两次后，把操作流程记录如下：</p>
-<h2 id="生成新表"><a href="#生成新表" class="headerlink" title="生成新表"></a>生成新表</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">php artisan make:migration create_label_tabel --create=label</div><div class="line">该命令会生成label表 ，并且在database/migrate/ 下生成时间戳_create_label_tabel 的一条文件</div></pre></td></tr></table></figure>
-<h2 id="新增表字段"><a href="#新增表字段" class="headerlink" title="新增表字段"></a>新增表字段</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> php artisan make:migration add_label_field --tabel=label</div><div class="line">该命令会在database/migrate/ 下生成时间戳_add_label_field 的一条文件</div></pre></td></tr></table></figure>
+<h2 id="生成新表"><a href="#生成新表" class="headerlink" title="生成新表"></a>生成新表</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">php artisan make:migration create_label_table --create=label</div><div class="line">该命令会生成label表 ，并且在database/migrate/ 下生成时间戳_create_label_table 的一条文件</div></pre></td></tr></table></figure>
+<h2 id="新增表字段"><a href="#新增表字段" class="headerlink" title="新增表字段"></a>新增表字段</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> php artisan make:migration add_label_field --table=label</div><div class="line">该命令会在database/migrate/ 下生成时间戳_add_label_field 的一条文件</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="查看帮助"><a href="#查看帮助" class="headerlink" title="查看帮助"></a>查看帮助</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">php artisan migrate -h</div><div class="line">php artisan make:migration -h</div></pre></td></tr></table></figure>
 <h2 id="生成迁移"><a href="#生成迁移" class="headerlink" title="生成迁移"></a>生成迁移</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php artisan migrate</div></pre></td></tr></table></figure>
@@ -480,11 +480,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">composer</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,7 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">composer</a>
+                <a href="javascript:void(0)" class="js-tag color5">百度收录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,7 +504,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">excel</a>
+                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,11 +512,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kafka</a>
+                <a href="javascript:void(0)" class="js-tag color1">excel</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">db操作相关</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">xargs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,19 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">xargs</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">

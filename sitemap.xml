@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.maweizhuo.com/2017/07/17/laravel-migrate%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2018-05-10T14:10:52.222Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.maweizhuo.com/2018/02/02/laravel-exel%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</loc>
     
     <lastmod>2018-03-01T09:11:24.000Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>http://blog.maweizhuo.com/2017/12/19/laravel-%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</loc>
     
     <lastmod>2018-01-19T09:10:21.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.maweizhuo.com/2017/07/17/laravel-migrate%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2018-01-19T09:09:00.000Z</lastmod>
     
   </url>
   

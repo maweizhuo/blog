@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://blog.maweizhuo.com/2017/07/17/laravel-migrate%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-05-10T14:10:52.222Z</lastmod>
+    <data>
+        <display>
+        <title>laravel migrate使用</title>
+        <pubTime>2017-07-17T08:28:23.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>laravel</tag>
+         
+        <tag>migrate</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="http://blog.maweizhuo.com/categories/%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.maweizhuo.com/2018/02/02/laravel-exel%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</loc>
     <lastmod>2018-03-01T09:11:24.000Z</lastmod>
     <data>
@@ -222,30 +246,6 @@
         <tag>php</tag>
          
         <tag>laravel</tag>
-         
-         
-           
-             
-              <breadCrumb title="笔记" url="http://blog.maweizhuo.com/categories/%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.maweizhuo.com/2017/07/17/laravel-migrate%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-01-19T09:09:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>laravel migrate使用</title>
-        <pubTime>2017-07-17T08:28:23.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-        <tag>laravel</tag>
-         
-        <tag>migrate</tag>
          
          
            
